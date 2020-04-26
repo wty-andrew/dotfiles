@@ -1,0 +1,30 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[Makefile]
+indent_style = tab
+
+[*.py]
+indent_size = 4
+
+[*.{lisp,asd,el,paren}]
+indent_size = none
+indent_style = space
+tab_width = none
+
+[**.html]
+max_char = 78
+brace_style = expand
+
+[*.launch]
+indent_size = 2
+
+[*.test]
+indent_size = 2

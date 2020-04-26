@@ -1,0 +1,29 @@
+[push]
+	default = simple
+[alias]
+  ba = branch -a
+  bd = branch -d
+  br = branch
+  cam = commit -am
+  cm = commit -m
+  cl = clone
+  co = checkout
+  cob = checkout -b
+  d = diff
+  dc = diff --cached
+  ds = diff --stat
+  fl = log -u
+  la = "!git config -l | grep alias | cut -c 7-"
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lol = log --oneline --decorate --graph --all
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  p = push
+  r = reset
+  rh = reset --hard
+  r1 = reset HEAD^
+  sl = stash list
+  st = status -sb
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE

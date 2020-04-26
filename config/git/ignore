@@ -1,0 +1,13 @@
+# Emacs
+.#*
+
+# Vim
+*~
+
+# Python
+__pycache__/
+.mypy_cache/
+
+# VS Code
+.vscode/
+

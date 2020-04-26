@@ -1,0 +1,236 @@
+global !p
+# define global functions here
+endglobal
+
+# General
+
+snippet il "import library" b
+import $1 from '$2'$0
+endsnippet	
+
+snippet cvar "const variable"
+const $1 = $0
+endsnippet
+
+snippet cfun "const function"
+const $1 = ($2) => ${3:{
+	$4
+}}$0
+endsnippet
+
+snippet '^ec (\w+)' "export const" r
+`!p snip.rv = "export const {0} = '{0}'".format(match.group(1).upper())`
+endsnippet
+
+snippet cmt "comment" b
+/**
+ * $1
+ */
+$0
+endsnippet
+
+snippet todo "comment" b
+// TODO: $0
+endsnippet
+
+snippet fix "comment" b
+// FIXME: $0
+endsnippet
+
+# React/Redux
+snippet st "style"
+style={$0}
+endsnippet
+
+snippet irx "import redux" b
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import * as $1Actions from './$1Actions'
+
+const mapDispatchToProps = dispatch => ({
+	actions: bindActionCreators($1Actions, dispatch),
+})$2
+endsnippet
+
+snippet cdm "componentDidMount" b
+componentDidMount() {
+	$1
+}
+$0
+endsnippet
+ 
+snippet cwum "componentWillUnmount" b
+componentWillUnmount() {
+	$1
+}
+$0
+endsnippet
+
+snippet cwud "componentWillUpdate" b
+componentWillUpdate() {
+	$1
+}
+$0
+endsnippet
+
+snippet smart "container-component" b
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export class ${1:`!p snip.rv = snip.basename`} extends Component {
+	static propTypes = {
+		// actions: PropTypes.object.isRequired,
+	}
+
+	render() {
+		return (
+			${2:<div>
+				${3:$1}$0
+			</div>}
+		)
+	}
+}
+
+export default $1
+endsnippet
+
+snippet dumb "presentational-component" b
+import React from 'react'
+import PropTypes from 'prop-types'
+
+export const ${1:`!p snip.rv = snip.basename`} = (${2:props}) => {
+	return (
+		${3:<div>$1</div>}$0
+	)
+}
+
+$1.propTypes = {
+	${4:// actions}: PropTypes.object.isRequired,$5
+}
+
+export default $1
+endsnippet
+
+snippet irn "import react-native" b
+import { ${1:View, StyleSheet} } from 'react-native'
+
+${2:const styles = StyleSheet.create({
+	${3:container}: {
+		$0
+	}
+})}
+endsnippet
+
+snippet mstp "mapStateToProps" b
+const mapStateToProps = ${1:state} => ({
+	$2
+})$3
+endsnippet
+
+snippet mdtp "mapDispatchToProps" b
+const mapDispatchToProps = dispatch => ({
+	actions: bindActionCreators($1, dispatch),
+})$2
+endsnippet
+
+snippet act "redux-action" b
+export const $1 = $2 => {
+	return {
+		type: $3
+	}
+}
+endsnippet
+
+snippet reducer "redux-reducer" b
+export default function(state$1, action) {
+	switch (action.type) {
+		case ${2:CASE}:
+			return $3
+		$0
+		default:
+			return state
+	}
+}
+endsnippet
+
+# Express
+snippet req "require module" b
+const $1 = require('$2')$0
+endsnippet
+
+snippet schema "mongoose schema" b
+const mongoose = require('mongoose')
+
+const ${1:`!p snip.rv = snip.basename.capitalize()`}Schema = new mongoose.Schema({
+	$0
+})
+
+const $1 = mongoose.model('$1', `!p snip.rv = t[1].lower()`Schema)
+module.exports = $1
+endsnippet
+
+snippet crud "crud routes" b
+const express = require('express')
+
+const ${1:`!p snip.rv = snip.basename.capitalize()`} = require('../controllers/${2:`!p snip.rv = t[1].lower()`}')
+const router = express.Router()
+
+router.get('/', $1Controller.get$1s)
+
+router.get('/:id', $1Controller.get$1)
+
+router.post('/', $1Controller.create$1)
+
+router.${2:put}('/:id', $1Controller.update$1)
+
+router.delete('/:id', $1Controller.delete$1)
+
+module.exports = router
+endsnippet
+
+snippet router "express router" b
+const express = require('express')
+
+const router = express.Router()
+
+$0
+
+module.exports = router
+endsnippet
+
+# Test
+
+snippet supertest "supertest" b
+const request = require('supertest')
+const expect = require('expect')
+
+const app = require('../server')
+const ${1:`!p
+snip.rv = snip.fn[:snip.fn.index('.')].capitalize()
+`} = require('../models/`!p snip.rv = t[1].lower()`')
+$0
+endsnippet
+
+snippet des "describe(..., () => {})" b
+describe('$1', () => {
+	$0
+})
+endsnippet
+
+snippet "^des (\w+) (\S+)" "describe api" r
+describe('`!p snip.rv = match.group(1).upper() + ' ' + match.group(2)`', () => {
+	it('$1', ${2:done} => {
+		request(app)
+			.`!p snip.rv = "{0}('{1}')".format(match.group(1).lower(), match.group(2))`
+			.expect(${3:200})
+			.end(${4:done})
+	})
+})
+endsnippet
+
+snippet it "it('should ...', () => {})" !b
+it('$1', () => {
+	${0:throw new Error()}
+})
+endsnippet
