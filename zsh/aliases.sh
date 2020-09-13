@@ -1,3 +1,4 @@
-alias mv='mv -i'
-alias rm='rm -i'
-alias cp='cp -i'
+# github.com/alexmurray/emacs-snap/issues/10
+alias spacemacs="(/snap/bin/emacs $* 2>&1 1>/dev/null | grep -v Fontconfig | grep -v libgvfsdbus.so &)"
+alias bat=batcat
+

@@ -9,6 +9,5 @@ install_docker() {
 }
 
 postinstall_docker() {
-  sudo groupadd docker
   sudo usermod -aG docker $USER
 }
