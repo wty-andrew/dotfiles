@@ -11,7 +11,7 @@ unset file
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git zsh-completions docker docker-compose)
+plugins=(git zsh-completions zsh-autocomplete docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 

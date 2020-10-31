@@ -14,6 +14,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action minimize
 gsettings set org.gnome.mutter workspaces-only-on-primary false
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+gsettings set org.gnome.desktop.wm.keybindings activate-window-menu "[]"
 
 notice "Update/Upgrade system packages"
 sudo apt update && sudo apt upgrade -y
