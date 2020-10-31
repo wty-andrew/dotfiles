@@ -3,6 +3,8 @@ export ZSH_THEME="bullet-train"
 
 export EDITOR=nvim
 
+typeset -U path
+
 for file in $HOME/dotfiles/zsh/{env,aliases,functions,local}.sh; do
   [ -f "$file" ] && source "$file"
 done
