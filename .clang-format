@@ -1,0 +1,19 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+AccessModifierOffset: -2 # -1
+AlignAfterOpenBracket: AlwaysBreak # Align
+AlignConsecutiveMacros: true # false
+AllowShortBlocksOnASingleLine: Empty # Never
+BinPackArguments: false # true
+BinPackParameters: false # true
+BreakBeforeBraces: Custom # Attach
+BraceWrapping:
+  BeforeCatch: true # false
+ColumnLimit: 100 # 80
+ContinuationIndentWidth: 2 # 4
+Cpp11BracedListStyle: false # true
+DerivePointerAlignment: false
+SortIncludes: false # true
+TabWidth: 2 # 8
+...

@@ -25,6 +25,8 @@ try_create_symlink $DOTFILES_ROOT/config/yapf $HOME/.config/yapf
 try_create_symlink $DOTFILES_ROOT/config/flake8 $HOME/.config/flake8
 try_create_symlink $DOTFILES_ROOT/config/mypy $HOME/.config/mypy
 
+try_create_symlink $DOTFILES_ROOT/.clang-format $HOME/.clang-format
+
 for file in $(find "$CWD/customize" -maxdepth 1 -name '*.sh'); do
   source $file
   target=$(basename $file .sh)
