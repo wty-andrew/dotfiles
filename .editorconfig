@@ -31,3 +31,6 @@ indent_size = 2
 
 [*.test]
 indent_size = 2
+
+[*.{vert,tesc,tese,geom,frag,comp,glsl}]
+indent_size = 4
