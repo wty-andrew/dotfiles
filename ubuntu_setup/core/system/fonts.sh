@@ -3,7 +3,7 @@ check_fonts() {
 }
 
 install_fonts() {
-  sudo apt install -y fonts-powerline fonts-firacode
+  sudo apt install -y fonts-powerline fonts-firacode fonts-humor-sans
 
   mkdir -p $HOME/.local/share/fonts && cd $_
   git clone -b release --depth 1 https://github.com/adobe-fonts/source-code-pro.git
