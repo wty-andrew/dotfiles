@@ -3,3 +3,4 @@ alias spacemacs="(/snap/bin/emacs $* 2>&1 1>/dev/null | grep -v Fontconfig | gre
 alias bat=batcat
 alias copy="xclip -selection clipboard"
 alias ports="netstat -ntlp"
+alias mygen="HYGEN_TMPLS=$HOME/dotfiles/_templates hygen"
