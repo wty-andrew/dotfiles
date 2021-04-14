@@ -10,8 +10,8 @@ trim_trailing_whitespace = true
 [Makefile]
 indent_style = tab
 
-[*.c]
-indent_size = 4
+[*.{h,hpp,c,cc,cpp}]
+indent_size = 2
 
 [*.py]
 indent_size = 4
@@ -20,6 +20,9 @@ indent_size = 4
 indent_size = none
 indent_style = space
 tab_width = none
+
+[*.{js,jsx,json,ts,tsx}]
+indent_size = 2
 
 [**.html]
 max_char = 78
