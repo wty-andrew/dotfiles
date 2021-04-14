@@ -23,3 +23,9 @@ for file in $HOME/dotfiles/zsh/{env,aliases,functions,local}.sh; do
 done
 unset file
 
+if command -v pyenv &>/dev/null; then
+  eval "$(pyenv init -)"
+fi
+if command -v pyenv-virtualenv &>/dev/null; then
+  eval "$(pyenv virtualenv-init -)"
+fi
