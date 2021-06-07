@@ -15,7 +15,7 @@ try_create_symlink $DOTFILES_ROOT/.gitconfig $HOME/.gitconfig
 try_create_symlink $DOTFILES_ROOT/.editorconfig $HOME/.editorconfig
 
 try_create_symlink $DOTFILES_ROOT/stumpwm.d/init.lisp $HOME/.stumpwmrc
-try_create_symlink $DOTFILES_ROOT/next $HOME/.config/next
+try_create_symlink $DOTFILES_ROOT/nyxt $HOME/.config/nyxt
 try_create_symlink $DOTFILES_ROOT/nvim $HOME/.config/nvim
 try_create_symlink $DOTFILES_ROOT/.tmux.conf $HOME/.tmux.conf
 try_create_symlink $DOTFILES_ROOT/.sbclrc $HOME/.sbclrc
