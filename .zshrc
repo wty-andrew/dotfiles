@@ -8,7 +8,7 @@ typeset -U path
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git zsh-completions docker docker-compose)
+plugins=(git zsh-completions docker docker-compose conda-zsh-completion)
 
 source $ZSH/oh-my-zsh.sh
 
