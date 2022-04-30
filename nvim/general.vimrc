@@ -17,10 +17,6 @@ set background=light
 set colorcolumn=81
 colorscheme one
 
-if (has("termguicolors"))
-  set termguicolors
-endif
-
 "---------- Searching ----------
 set incsearch
 set hlsearch
