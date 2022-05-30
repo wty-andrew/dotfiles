@@ -23,8 +23,10 @@ for file in $HOME/dotfiles/zsh/{env,aliases,functions,local}.sh; do
 done
 unset file
 
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 if command -v pyenv &>/dev/null; then
   eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 if command -v pyenv-virtualenv &>/dev/null; then
   eval "$(pyenv virtualenv-init -)"
