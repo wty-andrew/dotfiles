@@ -22,6 +22,7 @@ try_create_symlink $DOTFILES_ROOT/nyxt $HOME/.config/nyxt
 try_create_symlink $DOTFILES_ROOT/nvim $HOME/.config/nvim
 try_create_symlink $DOTFILES_ROOT/.tmux.conf $HOME/.tmux.conf
 try_create_symlink $DOTFILES_ROOT/.sbclrc $HOME/.sbclrc
+try_create_symlink $DOTFILES_ROOT/zathurarc $HOME/.config/zathura/zathurarc
 
 try_create_symlink $DOTFILES_ROOT/.pylintrc $HOME/.pylintrc
 try_create_symlink $DOTFILES_ROOT/config/yapf $HOME/.config/yapf
