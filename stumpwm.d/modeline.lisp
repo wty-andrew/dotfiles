@@ -33,6 +33,6 @@
 
 (ql:quickload :xembed)
 (load-module "stumptray")
-(enable-mode-lines)
+;; (enable-mode-lines)
 ;; (run-commands "stumptray")
 ;; (stumptray:stumptray)

@@ -44,4 +44,22 @@
 (load-module "swm-gaps")
 (setf swm-gaps:*inner-gaps-size* 6
       swm-gaps:*outer-gaps-size* 8)
-(swm-gaps:toggle-gaps-on)
+;; (swm-gaps:toggle-gaps-on)
+
+(defcommand polybar () ()
+  "Start polybar with temporary hack to reserve space on top of screen."
+  (let ((origin-gaps-state swm-gaps:*gaps-on*))
+    (swm-gaps:toggle-gaps-off)
+    (let* ((head-number 0)
+           (size 30)
+           (head (head-by-number (current-screen) head-number))
+           (x (head-x head))
+           (y (head-y head))
+           (width (head-width head))
+           (height (head-height head)))
+      (run-shell-command "feh --bg-fill ~/dotfiles/wallpapers/yosemite.png")
+      (run-shell-command "polybar-msg cmd quit")
+      (run-shell-command "polybar main")
+      (resize-head head-number x (+ y size) width (- height size))
+      (when origin-gaps-state
+        (swm-gaps:toggle-gaps-on)))))
