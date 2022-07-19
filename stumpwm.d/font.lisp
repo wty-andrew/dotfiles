@@ -1,5 +1,5 @@
 (load-module "ttf-fonts")
-(setf xft:*font-dirs* '("~/dotfiles/stumpwm.d/fonts/"))
+(setf xft:*font-dirs* '("~/dotfiles/fonts/"))
 (unless (xft:get-font-families)
   (xft:cache-fonts))
 

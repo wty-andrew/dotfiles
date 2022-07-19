@@ -51,7 +51,7 @@
   (let ((origin-gaps-state swm-gaps:*gaps-on*))
     (swm-gaps:toggle-gaps-off)
     (let* ((head-number 0)
-           (size 30)
+           (size 40)
            (head (head-by-number (current-screen) head-number))
            (x (head-x head))
            (y (head-y head))

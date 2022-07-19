@@ -24,7 +24,7 @@ sudo apt install -y git curl wget tree unzip unrar jq htop flameshot xclip bat m
 sudo apt install -y gdebi software-properties-common ca-certificates
 sudo apt install -y g++ gcc build-essential pkg-config make cmake autoconf llvm
 sudo apt install -y python3-dev python3-pip
-sudo apt install -y lightdm  # having some problems with login manager and fcitx with gdm3
+sudo apt install -y fonts-noto-color-emoji fonts-firacode
 
 cd $DOWNLOAD_PATH
 
