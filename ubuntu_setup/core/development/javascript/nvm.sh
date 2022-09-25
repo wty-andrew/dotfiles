@@ -4,13 +4,13 @@ check_nvm() {
 
 install_nvm() {
   cd $TEMPORARY_DOWNLOAD_PATH
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 }
 
 postinstall_nvm() {
   local header="# ===== NVM ====="
   local text=$(cat <<'EOF'
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 EOF
@@ -19,4 +19,5 @@ EOF
 
   nvm install node
   nvm use node
+  corepack enable
 }

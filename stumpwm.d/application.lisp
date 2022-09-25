@@ -12,11 +12,11 @@
 
 (defcommand chrome () ()
   "Start Chrome or switch to it." ;; https://github.com/stumpwm/stumpwm/issues/894
-  (run-or-raise "google-chrome --force-device-scale-factor=1.25 --disable-features=SendMouseLeaveEvents" '(:class "Google-chrome")))
+  (run-or-raise "google-chrome --force-device-scale-factor=1.25" '(:class "Google-chrome")))
 
 (defcommand vscode () ()
   "Start VSCode or switch to it."
-  (run-or-raise "code --disable-features=SendMouseLeaveEvents" '(:class "Code")))
+  (run-or-raise "code" '(:class "Code")))
 
 (defcommand slack () ()
   "Start Slack or switch to it."

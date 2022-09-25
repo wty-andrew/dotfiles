@@ -1,9 +1,8 @@
 check_mendeley() {
-  [[ -x "$(command -v mendeleydesktop)" ]]
+  ls $APPLICATION_DOWNLOAD_PATH | grep -q mendeley
 }
 
 install_mendeley() {
-  cd $TEMPORARY_DOWNLOAD_PATH
-  curl -Lo mendeley.deb https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest
-  sudo gdebi -n mendeley.deb
+  cd $APPLICATION_DOWNLOAD_PATH
+  curl -LO https://static.mendeley.com/bin/desktop/mendeley-reference-manager-2.77.0-x86_64.AppImage
 }

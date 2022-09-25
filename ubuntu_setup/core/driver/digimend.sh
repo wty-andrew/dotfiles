@@ -4,7 +4,7 @@ check_digimend() {
 
 install_digimend() {
   cd $TEMPORARY_DOWNLOAD_PATH
-  curl -OL https://github.com/DIGImend/digimend-kernel-drivers/releases/download/v10/digimend-dkms_10_all.deb
+  curl -OL https://github.com/DIGImend/digimend-kernel-drivers/releases/download/v11/digimend-dkms_11_all.deb
   sudo gdebi -n digimend-dkms_10_all.deb
 }
 

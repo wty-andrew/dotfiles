@@ -1,3 +1,7 @@
 install_ranger() {
-  pip3 install ranger-fm ueberzug
+  sudo apt install -y ranger
+}
+
+postinstall_ranger() {
+  pip3 install ueberzug
 }

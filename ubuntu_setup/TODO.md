@@ -27,11 +27,9 @@ function install_ceres_solver {
 # JavaScript
 
 ```bash
-npm i -g yarn
 npm i -g typescript ts-node
 npm i -g parcel-bundler
 npm i -g gatsby-cli
-npm i -g hygen
 npm i -g yo generator-code
 npm i -g gitmoji-cli
 ```
@@ -57,11 +55,6 @@ sudo apt install -y ros-$ROS_DISTRO_NAME-rosemacs
 # Python
 ```bash
 # https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim#using-virtual-environments
-pyenv install 2.7.18
-pyenv virtualenv 2.7.18 neovim2
-pyenv activate neovim2
-pip install neovim
-
 pyenv install 3.8.5
 pyenv virtualenv 3.8.5 neovim3
 pyenv activate neovim3
@@ -102,8 +95,5 @@ rustup completions zsh rustup > $ZSH/completions/_rustup
 rustup completions zsh cargo > $ZSH/completions/_cargo
 ```
 
-# alacritty
-```bash
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which alacritty) 50
-sudo update-alternatives --config x-terminal-emulator
-```
+sudo cp $HOME/dotfiles/ubuntu_setup/customize/files/hid_apple.conf /etc/modprobe.d
+sudo update-initramfs -u && reboot

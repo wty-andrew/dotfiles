@@ -4,8 +4,8 @@ check_roswell() {
 
 install_roswell() {
   cd $TEMPORARY_DOWNLOAD_PATH
-  curl -OL https://github.com/roswell/roswell/releases/download/v19.08.10.101/roswell_19.08.10.101-1_amd64.deb
-  sudo gdebi -n roswell_19.08.10.101-1_amd64.deb
+  curl -OL https://github.com/roswell/roswell/releases/download/v21.10.14.111/roswell_21.10.14.111-1_amd64.deb
+  sudo gdebi -n roswell_21.10.14.111-1_amd64.deb
 }
 
 postinstall_roswell() {

@@ -20,15 +20,17 @@ notice "Update/Upgrade system packages"
 sudo apt update && sudo apt upgrade -y
 
 notice "Install common packages"
-sudo apt install -y git curl wget tree unzip unrar jq htop flameshot xclip bat mlocate rsync feh blueman
+sudo apt install -y git curl wget tree unzip unrar jq htop flameshot xclip bat mlocate feh
+sudo apt install -y blueman rsync net-tools
 sudo apt install -y gdebi software-properties-common ca-certificates
 sudo apt install -y g++ gcc build-essential pkg-config make cmake autoconf llvm
-sudo apt install -y python3-dev python3-pip
-sudo apt install -y fonts-noto-color-emoji fonts-firacode
+sudo apt install -y python3-dev python3-pip python-is-python3
+sudo apt install -y flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 cd $DOWNLOAD_PATH
 
-for folder in system programs development; do
+for folder in programs development system; do
   notice "Setting up $folder..."
 
   for file in $(find "$CWD/core/$folder" -name '*.sh'); do

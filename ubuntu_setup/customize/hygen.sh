@@ -1,3 +1,3 @@
-install_hygen() {
+setup_hygen() {
   npm i -g hygen
 }

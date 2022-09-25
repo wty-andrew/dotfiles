@@ -24,7 +24,6 @@
 (load-config "application.lisp")
 (load-config "keybindings.lisp")
 (load-config "font.lisp")
-(load-config "modeline.lisp")
 
 ;;; UI/UX
 (setf *mouse-focus-policy* :sloppy)
@@ -40,11 +39,9 @@
       *message-window-padding* 10
       *window-border-style* :thin)
 
-;; https://github.com/lepisma/stumpwm-contrib/commit/08918d79fb33c20a04b86e5ac99f37f573c5a52f
 (load-module "swm-gaps")
 (setf swm-gaps:*inner-gaps-size* 6
       swm-gaps:*outer-gaps-size* 8)
-;; (swm-gaps:toggle-gaps-on)
 
 (defcommand polybar () ()
   "Start polybar with temporary hack to reserve space on top of screen."

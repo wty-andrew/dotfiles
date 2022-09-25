@@ -3,7 +3,7 @@ check_rakudo() {
 }
 
 install_rakudo() {
-  cd $PERMANENT_DOWNLOAD_PATH
+  cd $SOURCE_CODE_DOWNLOAD_PATH
   git clone https://github.com/rakudo/rakudo && cd rakudo
   perl Configure.pl --gen-moar --make-install --prefix $HOME/rakudo
 }

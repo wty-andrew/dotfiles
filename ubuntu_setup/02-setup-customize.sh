@@ -18,11 +18,13 @@ try_create_symlink $DOTFILES_ROOT/config/fontconfig $HOME/.config/fontconfig
 try_create_symlink $DOTFILES_ROOT/.alacritty.yml $HOME/.alacritty.yml
 
 try_create_symlink $DOTFILES_ROOT/stumpwm.d/init.lisp $HOME/.stumpwmrc
+try_create_symlink $DOTFILES_ROOT/config/polybar $HOME/.config/polybar
 try_create_symlink $DOTFILES_ROOT/nyxt $HOME/.config/nyxt
 try_create_symlink $DOTFILES_ROOT/nvim $HOME/.config/nvim
 try_create_symlink $DOTFILES_ROOT/.tmux.conf $HOME/.tmux.conf
 try_create_symlink $DOTFILES_ROOT/.sbclrc $HOME/.sbclrc
 try_create_symlink $DOTFILES_ROOT/config/zathura $HOME/.config/zathura
+try_create_symlink $DOTFILES_ROOT/config/ranger $HOME/.config/ranger
 
 try_create_symlink $DOTFILES_ROOT/.pylintrc $HOME/.pylintrc
 try_create_symlink $DOTFILES_ROOT/config/yapf $HOME/.config/yapf
