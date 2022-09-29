@@ -4,6 +4,6 @@
   (xft:cache-fonts))
 
 (set-font (make-instance 'xft:font
-                         :family "DejaVuSansMono Nerd Font Mono"
-                         :subfamily "Book"
-                         :size 12))
+                         :family "Sarasa Mono SC Nerd"
+                         :subfamily "Regular"
+                         :size 14))
