@@ -1,33 +1,40 @@
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="bullet-train"
+HISTSIZE=5000
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=5000
 
-export EDITOR=nvim
-
-typeset -U path
-
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-
-plugins=(git zsh-completions docker docker-compose conda-zsh-completion gradle-completion)
-
-source $ZSH/oh-my-zsh.sh
-
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-
+setopt noflowcontrol
+setopt autocd
 unsetopt correct_all
 setopt correct
+
+autoload -U select-word-style
+select-word-style bash
+
+source ~/.znap/zsh-snap/znap.zsh
+
+znap eval starship 'starship init zsh --print-full-init'
+znap prompt
+
+zstyle ':autocomplete:*' min-input 2
+zstyle ':autocomplete:*' insert-unambiguous yes
+zstyle ':autocomplete:*' widget-style menu-select
+
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-completions
+znap source zsh-users/zsh-syntax-highlighting
+znap source wfxr/forgit
+
+znap eval zoxide 'zoxide init zsh'
 
 for file in $HOME/dotfiles/zsh/{env,aliases,functions,local}.sh; do
   [ -f "$file" ] && source "$file"
 done
 unset file
 
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-if command -v pyenv &>/dev/null; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv init --path)"
-fi
-if command -v pyenv-virtualenv &>/dev/null; then
-  eval "$(pyenv virtualenv-init -)"
-fi
+znap compdef _rustup 'rustup completions zsh rustup'
+znap compdef _cargo  'rustup completions zsh cargo'
+znap compdef _fnm    'fnm completions --shell zsh'
+
+znap function _pyenv pyenv 'eval "$( pyenv init - --no-rehash )"'
+compctl -K    _pyenv pyenv
+
