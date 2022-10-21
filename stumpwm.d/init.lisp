@@ -47,9 +47,9 @@
   "Start polybar with temporary hack to reserve space on top of screen."
   (let ((origin-gaps-state swm-gaps:*gaps-on*))
     (swm-gaps:toggle-gaps-off)
-    (let* ((head-number 0)
+    (let* ((head (find-head-by-position (current-screen) 0 0))
+           (head-number (head-number head))
            (size 40)
-           (head (head-by-number (current-screen) head-number))
            (x (head-x head))
            (y (head-y head))
            (width (head-width head))
