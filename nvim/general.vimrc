@@ -1,4 +1,5 @@
 set encoding=utf8
+set clipboard=unnamedplus
 
 "---------- Spaces & Tabs ----------
 set tabstop=2

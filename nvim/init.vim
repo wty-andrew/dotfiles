@@ -1,9 +1,10 @@
+call plug#begin('~/.config/nvim/plugged')
+
 function! Cond(Cond, ...)
   let opts = get(a:000, 0, {})
   return a:Cond ? opts : extend(opts, { 'on': [], 'for': [] })
 endfunction
 
-call plug#begin('~/.config/nvim/plugged')
 Plug 'vimwiki/vimwiki'
 
 "---------- Navigation ----------
