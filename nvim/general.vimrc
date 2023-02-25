@@ -39,7 +39,6 @@ set ch=2
 set splitbelow
 
 "---------- FileType Settings ----------
-autocmd FileType html,css,javascript.jsx,vue EmmetInstall
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 autocmd BufNewFile,BufRead *.launch set syntax=xml

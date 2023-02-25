@@ -1,9 +1,3 @@
-"---------- vim-jsdoc Settings ----------
-let g:jsdoc_allow_input_prompt = 1
-let g:jsdoc_input_description = 1
-let g:jsdoc_enable_es6 = 1
-
-
 "---------- CtrlP Settings ---------- 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|venv|dist)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_cmd = 'CtrlP :pwd'
@@ -25,23 +19,6 @@ let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:UltiSnipsSnippetsDir='~/.config/nvim/UltiSnips'
 let g:UltiSnipsSnippetDirectories=['~/.config/nvim/UltiSnips', 'UltiSnips']
-
-"---------- Ale Settings ---------- 
-let g:ale_sign_column_always = 1
-"let g:ale_open_list = 1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\}
-let g:ale_fixers = {
-\ 'javascript': ['prettier', 'eslint'],
-\ 'python': ['autopep8'],
-\}
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5 --no-semi'
 
 "---------- Nerd Tree Settings ----------
 let g:NERDTreeWinPos = 'right'
@@ -66,30 +43,4 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='one'
 let g:airline#extensions#ale#enabled = 1
-
-"---------- Javascript-libraries-syntax Settings ---------- 
-let g:used_javascript_libs = 'vue,react,chai'
-
-"---------- Closetag Settings ---------- 
-let g:closetag_filenames = "*.html,*.vue,*.jsx,*.js"
-
-"---------- Emmet Settings ---------- 
-let g:user_emmet_settings = {
-\'javascript.jsx': {
-\    'extends': 'jsx',
-\  },
-\}
-
-"---------- vim-jsx Settings ---------- 
-let g:jsx_ext_required = 0
-
-"---------- MatchTagAlways Settings ---------- 
-let g:mta_filetypes = {
-\ 'html': 1,
-\ 'javascript.jsx': 1,
-\ 'vue': 1,
-\}
-
-"---------- auto-pairs Settings ---------- 
-au Filetype lisp let b:AutoPairs = {'(':')', '[':']', '{':'}','"':'"'}
 
