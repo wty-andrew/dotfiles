@@ -1,3 +1,8 @@
+function! Cond(Cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:Cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'vimwiki/vimwiki'
 
@@ -21,7 +26,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter'
-Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion', Cond(!exists('g:vscode'))
+Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
 Plug 'vim-scripts/matchit.zip'
 
 "---------- Git ----------

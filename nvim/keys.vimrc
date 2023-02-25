@@ -7,6 +7,7 @@ nnoremap k gk
 
 " Shortcuts
 inoremap fd <Esc>
+map s <Plug>(easymotion-prefix)
 nnoremap <leader>ei :tabe $MYVIMRC<CR>
 nnoremap <leader>so :so $MYVIMRC<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
