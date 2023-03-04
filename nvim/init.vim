@@ -8,30 +8,29 @@ endfunction
 Plug 'vimwiki/vimwiki'
 
 "---------- Navigation ----------
-Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', Cond(!exists('g:vscode'))
+Plug 'ctrlpvim/ctrlp.vim', Cond(!exists('g:vscode'))
 
 "---------- Completion ----------
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', Cond(!exists('g:vscode'))
 Plug 'jiangmiao/auto-pairs'
 
 "---------- Utility ----------
 Plug 'tpope/vim-surround'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion', Cond(!exists('g:vscode'))
 Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
-Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/matchit.zip', Cond(!exists('g:vscode'))
 
 "---------- Git ----------
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
+Plug 'airblade/vim-gitgutter', Cond(!exists('g:vscode'))
 
 "---------- UI ----------
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'rakr/vim-one'
-Plug 'itchyny/vim-cursorword'
+Plug 'vim-airline/vim-airline', Cond(!exists('g:vscode'))
+Plug 'vim-airline/vim-airline-themes', Cond(!exists('g:vscode'))
+Plug 'rakr/vim-one', Cond(!exists('g:vscode'))
+Plug 'itchyny/vim-cursorword', Cond(!exists('g:vscode'))
 call plug#end()
 
 source ~/.config/nvim/general.vimrc
