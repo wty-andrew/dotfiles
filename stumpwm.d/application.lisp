@@ -48,3 +48,20 @@
   "Start LBRY if it is not already running."
   (unless (program-running-p "lbry")
     (run-shell-command "lbry")))
+
+(defcommand polybar () ()
+  "Start polybar with temporary hack to reserve space on top of screen."
+  (let ((origin-gaps-state swm-gaps:*gaps-on*))
+    (swm-gaps:toggle-gaps-off)
+    (let* ((head (find-head-by-position (current-screen) 0 0))
+           (head-number (head-number head))
+           (size 40)
+           (x (head-x head))
+           (y (head-y head))
+           (width (head-width head))
+           (height (head-height head)))
+      (run-shell-command "polybar-msg cmd quit")
+      (run-shell-command "polybar main")
+      (resize-head head-number x (+ y size) width (- height size))
+      (when origin-gaps-state
+        (swm-gaps:toggle-gaps-on)))))
