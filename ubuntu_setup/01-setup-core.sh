@@ -20,7 +20,7 @@ notice "Update/Upgrade system packages"
 sudo apt update && sudo apt upgrade -y
 
 notice "Install common packages"
-sudo apt install -y git curl wget tree unzip unrar jq htop mlocate
+sudo apt install -y git curl wget tree unzip unrar jq htop mlocate ripgrep
 sudo apt install -y blueman rsync net-tools
 sudo apt install -y gdebi software-properties-common ca-certificates flatpak
 sudo apt install -y g++ gcc build-essential pkg-config make cmake autoconf llvm
