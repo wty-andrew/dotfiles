@@ -4,10 +4,7 @@
 DOWNLOAD_DIR=$HOME/Source
 
 function install_gtest_gmock {
-  sudo apt install -y libgtest-dev google-mock
-  cd /usr/src/googletest
-  mkdir build && cd build
-  cmake .. --target install
+  sudo apt install -y libgtest-dev libgmock-dev
 }
 
 function install_ceres_solver {
@@ -87,13 +84,3 @@ conda activate cling
 conda install xeus-cling -c conda-forge
 conda install jupyter
 ```
-
-# Rust
-```bash
-mkdir $ZSH/completions
-rustup completions zsh rustup > $ZSH/completions/_rustup
-rustup completions zsh cargo > $ZSH/completions/_cargo
-```
-
-sudo cp $HOME/dotfiles/ubuntu_setup/customize/files/hid_apple.conf /etc/modprobe.d
-sudo update-initramfs -u && reboot
