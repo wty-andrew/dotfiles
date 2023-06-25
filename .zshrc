@@ -34,6 +34,7 @@ unset file
 znap compdef _rustup 'rustup completions zsh rustup'
 znap compdef _cargo  'rustup completions zsh cargo'
 znap compdef _fnm    'fnm completions --shell zsh'
+znap compdef _poetry 'poetry completions zsh'
 
 znap function _pyenv pyenv 'eval "$( pyenv init - --no-rehash )"'
 compctl -K    _pyenv pyenv
