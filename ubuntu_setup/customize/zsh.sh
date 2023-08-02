@@ -2,14 +2,17 @@ install_starship() {
   curl -sS https://starship.rs/install.sh | sh
 }
 
-install_zsh_snap() {
-  [[ -f $HOME/.znap/zsh-snap/znap.zsh ]] ||
-  mkdir -p $HOME/.znap
-  git clone https://github.com/marlonrichert/zsh-snap.git $HOME/.znap/zsh-snap
+install_zim() {
+  curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+}
+
+install_zoxide() {
+  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 }
 
 setup_zsh() {
-  sudo apt install -y fzf zoxide
+  sudo apt install -y fzf
   install_starship
-  install_zsh_snap
+  install_zim
+  install_zoxide
 }

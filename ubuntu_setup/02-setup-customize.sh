@@ -8,6 +8,7 @@ source "$CWD/helpers.sh"
 
 notice "Installing symlinks"
 try_create_symlink $DOTFILES_ROOT/.zshrc $HOME/.zshrc
+try_create_symlink $DOTFILES_ROOT/.zimrc $HOME/.zimrc
 try_create_symlink $DOTFILES_ROOT/config/starship.toml $HOME/.config/starship.toml
 
 try_create_symlink $DOTFILES_ROOT/config/git $HOME/.config/git
