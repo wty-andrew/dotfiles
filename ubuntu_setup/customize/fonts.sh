@@ -5,6 +5,8 @@ setup_fonts() {
   git clone -b release --depth 1 https://github.com/adobe-fonts/source-code-pro.git
 
   cp $DOTFILES_ROOT/fonts/MaterialIcons/MaterialIcons-Regular.ttf $HOME/.local/share/fonts
+  cp $DOTFILES_ROOT/fonts/FiraCode\ Nerd\ Font/FiraCodeNerdFontMono-Regular.ttf $HOME/.local/share/fonts
+  cp $DOTFILES_ROOT/fonts/SourceCodePro\ Nerd\ Font/SauceCodeProNerdFontMono-Regular.ttf $HOME/.local/share/fonts
   cp $DOTFILES_ROOT/fonts/Ubuntu\ Mono\ Nerd\ Font/Ubuntu\ Mono\ Nerd\ Font\ Complete.ttf $HOME/.local/share/fonts
   cp $DOTFILES_ROOT/fonts/DejaVu\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono.ttf $HOME/.local/share/fonts
   cp $DOTFILES_ROOT/fonts/NotoSansMonoCJK/NotoSansMonoCJKtc-Regular.otf $HOME/.local/share/fonts
@@ -12,3 +14,4 @@ setup_fonts() {
   fc-cache -f $HOME/.local/share/fonts
 }
 
+    
