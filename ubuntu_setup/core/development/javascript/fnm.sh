@@ -18,5 +18,6 @@ EOF
   local latest=$(fnm list-remote | tail -n 1)
   fnm install $latest
   fnm default $latest
-  corepack enable # for yarn
+  corepack enable
+  corepack prepare pnpm@latest --activate
 }
