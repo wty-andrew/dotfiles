@@ -84,3 +84,5 @@ conda activate cling
 conda install xeus-cling -c conda-forge
 conda install jupyter
 ```
+
+ln -s $(which fdfind) ~/.local/bin/fd

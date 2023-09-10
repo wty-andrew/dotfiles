@@ -25,7 +25,7 @@ sudo apt install -y blueman rsync net-tools
 sudo apt install -y gdebi software-properties-common ca-certificates flatpak
 sudo apt install -y g++ gcc build-essential pkg-config make cmake autoconf llvm
 sudo apt install -y python3-dev python3-pip python-is-python3
-sudo apt install -y feh picom flameshot xclip bat
+sudo apt install -y feh picom flameshot xclip bat fd-find exa
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 cd $DOWNLOAD_PATH

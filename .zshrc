@@ -141,4 +141,7 @@ for file in $HOME/dotfiles/zsh/{env,aliases,functions,local}.sh; do
 done
 unset file
 
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
 eval "$(starship init zsh)"
