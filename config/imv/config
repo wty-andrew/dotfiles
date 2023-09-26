@@ -1,0 +1,55 @@
+[options]
+
+loop_input = true
+
+overlay_position_bottom = true
+
+[binds]
+
+<Left> = prev
+<Right> = next
+
+<bracketleft> = prev
+<bracketright> = next
+
+gg = goto 1
+<Shift+G> = goto -1
+
+# Panning
+
+j = pan 0 -50
+k = pan 0 50
+h = pan 50 0
+l = pan -50 0
+
+c = center
+
+# Zooming
+
+i = zoom 1
+o = zoom -1
+
+<plus> = zoom 1
+<minus> = zoom -1
+
+s = scaling next
+z = zoom actual
+
+# Rotation
+
+<r> = rotate by 90
+<Ctrl+r> = rotate by -90
+
+# Commands
+
+d = overlay
+
+f = fullscreen
+
+x = close
+
+y = exec echo -n "$imv_current_file" | wl-copy
+
+<Ctrl+c> = exec wl-copy < "$imv_current_file"
+
+q = quit
