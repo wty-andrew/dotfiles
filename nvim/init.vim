@@ -10,6 +10,7 @@ Plug 'vimwiki/vimwiki'
 "---------- Navigation ----------
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', Cond(!exists('g:vscode'))
 Plug 'ctrlpvim/ctrlp.vim', Cond(!exists('g:vscode'))
+Plug 'christoomey/vim-tmux-navigator'
 
 "---------- Completion ----------
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets', Cond(!exists('g:vscode'))
@@ -30,6 +31,7 @@ Plug 'airblade/vim-gitgutter', Cond(!exists('g:vscode'))
 Plug 'vim-airline/vim-airline', Cond(!exists('g:vscode'))
 Plug 'vim-airline/vim-airline-themes', Cond(!exists('g:vscode'))
 Plug 'rakr/vim-one', Cond(!exists('g:vscode'))
+Plug 'catppuccin/nvim', Cond(!exists('g:vscode'), { 'as': 'catppuccin' })
 Plug 'itchyny/vim-cursorword', Cond(!exists('g:vscode'))
 call plug#end()
 

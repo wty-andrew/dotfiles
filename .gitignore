@@ -2,3 +2,5 @@ nvim/plugged/*
 nvim/autoload/*
 zsh/local.sh
 *.log
+
+config/tmux/plugins

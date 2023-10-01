@@ -14,9 +14,12 @@ set ruler
 set mousehide
 set listchars=space:·,eol:¬
 set nolist
-set background=light
-set colorcolumn=81
-colorscheme one
+set termguicolors
+colorscheme catppuccin-frappe
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 "---------- Searching ----------
 set incsearch
