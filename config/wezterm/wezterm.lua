@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 local config = {}
 
 if wezterm.config_builder then
@@ -9,11 +10,35 @@ config.font = wezterm.font_with_fallback {
   'FiraCode Nerd Font Mono',
   'Noto Sans Mono CJK TC'
 }
-config.font_size = 12;
+config.font_size = 12
 config.color_scheme = 'Catppuccin Frappe'
-
 config.window_background_opacity = 0.9
+config.window_padding = {
+  left = 20,
+  right = 20,
+  top = 20,
+  bottom = 20,
+}
 
-config.use_ime = true;
+config.use_ime = true
+
+config.leader = { key = 'Space', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 }
+config.keys = {
+  { key = 'K', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Up' },
+  { key = 'J', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Down' },
+  { key = 'H', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Left' },
+  { key = 'L', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection 'Right' },
+  { key = 'K', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Up', 1 } },
+  { key = 'J', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Down', 1 } },
+  { key = 'H', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Left', 1 } },
+  { key = 'L', mods = 'CTRL|SHIFT|ALT', action = act.AdjustPaneSize { 'Right', 1 } },
+  { key = '{', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) },
+  { key = '}', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(1) },
+  { key = '|', mods = 'CTRL|SHIFT', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+  { key = '_', mods = 'CTRL|SHIFT', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+  { key = '~', mods = 'CTRL|SHIFT', action = act.SpawnTab 'CurrentPaneDomain' },
+  { key = ':', mods = 'CTRL|SHIFT', action = act.ShowDebugOverlay },
+  { key = '?', mods = 'CTRL|SHIFT', action = act.Search 'CurrentSelectionOrEmptyString' },
+}
 
 return config
