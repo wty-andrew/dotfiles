@@ -22,6 +22,10 @@
   "Start Slack or switch to it."
   (run-or-raise "slack" '(:class "slack")))
 
+(defcommand wezterm () ()
+  "Start wezterm or switch to it."
+  (run-or-raise "wezterm" '(:class "wezterm")))
+
 (defcommand zathura () ()
   "Start Zathura or switch to it."
   (run-or-raise "zathura" '(:class "Zathura")))

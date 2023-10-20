@@ -7,7 +7,7 @@
 ;; applications
 (define-key *root-map* (kbd "c") "chrome") ; override terminal
 (define-key *root-map* (kbd "s") "slack") ; override vsplit
-(define-key *root-map* (kbd "t") "alacritty")
+(define-key *root-map* (kbd "t") "wezterm")
 (define-key *root-map* (kbd "v") "vscode") ; override version
 (define-key *root-map* (kbd "z") "zathura")
 

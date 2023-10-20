@@ -9,7 +9,7 @@ install_fnm() {
 postinstall_fnm() {
   local header="# ===== fnm ====="
   local text=$(cat <<'EOF'
-export PATH=$HOME/.fnm:$PATH
+export PATH=$HOME/.local/share/fnm:$PATH
 eval "`fnm env`"
 EOF
 )
