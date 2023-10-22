@@ -17,7 +17,6 @@ try_create_symlink $DOTFILES_ROOT/.gitconfig $HOME/.gitconfig
 try_create_symlink $DOTFILES_ROOT/.editorconfig $HOME/.editorconfig
 
 try_create_symlink $DOTFILES_ROOT/config/fontconfig $HOME/.config/fontconfig
-try_create_symlink $DOTFILES_ROOT/.alacritty.yml $HOME/.alacritty.yml
 
 try_create_symlink $DOTFILES_ROOT/stumpwm.d/init.lisp $HOME/.stumpwmrc
 try_create_symlink $DOTFILES_ROOT/config/polybar $HOME/.config/polybar

@@ -2,10 +2,6 @@
   "Check if program is already running."
   (zerop (nth-value 2 (uiop:run-program (format nil "pgrep ~a" program) :ignore-error-status t))))
 
-(defcommand alacritty () ()
-  "Start alacritty or switch to it."
-  (run-or-raise "alacritty" '(:class "Alacritty")))
-
 (defcommand calibre () ()
   "Start Calibre or switch to it."
   (run-or-raise "calibre" '(:class "calibre")))
