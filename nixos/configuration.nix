@@ -67,8 +67,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    alacritty
-
     chromium
     firefox
 
@@ -137,6 +135,8 @@
     xwayland.enable = true;
   };
 
+  programs.thunar.enable = true;
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -145,7 +145,6 @@
 
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.xkbOptions = "ctrl:nocaps";
 
   services.flatpak.enable = true;
 

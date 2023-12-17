@@ -1,7 +1,13 @@
-{ config, pkgs, username, ... }:
+{ inputs, config, pkgs, username, ... }:
 
 {
   imports = [
+    ./ags
+    ./editorconfig
+    ./git
+    ./starship
+    ./tmux
+    ./zsh
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -21,29 +27,17 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-    neofetch
-
-    ripgrep
-    jq
+    bat
+    diff-so-fancy
     exa
     fzf
+    jq
+    lsd
+    neofetch
+    ranger
+    ripgrep
     tree
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    zoxide
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -53,7 +47,13 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".tmux.conf".source = ./tmux.conf;
+    ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "/home/andrew/dotfiles/home-manager/config/hypr";
+
+    ".config/wezterm" = {
+      source = ./config/wezterm;
+      recursive = true;
+    };
+    # ".config/wezterm/wezterm.lua".source = config.lib.file.mkOutOfStoreSymlink "/home/andrew/dotfiles/home-manager/config/wezterm/wezterm.lua";
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -85,28 +85,20 @@
     userEmail = "wty.andrew@gmail.com";
   };
 
-  programs.alacritty = {
+  programs.wezterm = {
     enable = true;
-    settings = {
-      font = {
-        size = 14;
-      };
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    enableSyntaxHighlighting = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   xdg.mimeApps.defaultApplications = {
     "application/pdf" = [ "zathura.desktop" ];
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-chewing
+      fcitx5-chinese-addons
+      fcitx5-gtk
+    ];
   };
 }
