@@ -25,7 +25,10 @@ indent_size=4
 [*.tf]
 indent_size=2
 
-[*.{h,hpp,c,cc,cpp,vert,frag,glsl}]
+[*.{vert,frag,glsl}]
+indent_size=2
+
+[*.{h,hpp,c,cc,cpp}]
 indent_size=4
 
 [*.{html,css,sass,scss}]
@@ -45,4 +48,3 @@ indent_size=2
 
 [Makefile]
 indent_style=tab
-

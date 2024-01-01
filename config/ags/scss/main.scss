@@ -1,0 +1,101 @@
+@import 'variables';
+@import 'colors';
+
+.transparent {
+  background-color: transparent;
+}
+
+// bar
+
+.bar {
+  font-size: 8pt;
+  padding: 5px 8px 0;
+}
+
+.box {
+  color: black;
+  border-radius: 6px;
+  background-color: #f5eee6;
+  padding: 2px 6px;
+}
+
+.end {
+  // color: black;
+  // padding: 0 10px;
+  // border-radius: 10px;
+  // background-color: #f5eee6;
+}
+
+.workspaces button {
+  all: unset;
+
+  margin: 0 5px;
+  color: #7aa2f7;
+
+  &.occupied {
+    color: #9ece6a;
+  }
+
+  &.active {
+    color: #bfc9db;
+  }
+}
+
+
+.popup {
+  color: blue;
+}
+
+window#notifications {
+  all: unset;
+}
+
+window#notifications box.notifications {
+  padding: 0.5em;
+}
+
+.icon {
+  min-width: 68px;
+  min-height: 68px;
+  margin-right: 1em;
+}
+
+.icon image {
+  font-size: 58px;
+  /* to center the icon */
+  margin: 5px;
+}
+
+.icon box {
+  min-width: 68px;
+  min-height: 68px;
+  border-radius: 7px;
+}
+
+.notification {
+  min-width: 350px;
+  border-radius: 11px;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.notification.critical {
+  border: 1px solid lightcoral;
+}
+
+.title {
+  font-size: 1.4em;
+}
+
+.actions .action-button {
+  margin: 0 0.4em;
+  margin-top: 0.8em;
+}
+
+.actions .action-button:first-child {
+  margin-left: 0;
+}
+
+.actions .action-button:last-child {
+  margin-right: 0;
+}

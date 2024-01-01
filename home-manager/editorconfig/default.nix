@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ ... }: {
   editorconfig.enable = true;
-  home.file.".editorconfig".source = ./editorconfig;
+
+  home.file.".editorconfig".source = ../../config/.editorconfig;
 }

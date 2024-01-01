@@ -26,7 +26,6 @@
         "sbt"
         "scala"
         "terraform"
-        "tmux"
         "yarn"
       ];
     };

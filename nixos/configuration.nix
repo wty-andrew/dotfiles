@@ -2,9 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -39,7 +37,7 @@
     LC_NUMERIC = "zh_TW.UTF-8";
     LC_PAPER = "zh_TW.UTF-8";
     LC_TELEPHONE = "zh_TW.UTF-8";
-    LC_TIME = "zh_TW.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
 
   # Configure keymap in X11
@@ -66,39 +64,36 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    chromium
-    firefox
-
     # eww-wayland
-    dunst
     libnotify
     swww
     rofi-wayland
     networkmanagerapplet
+    hyprpaper
 
     git
     htop
-    ripgrep
     flameshot
     vlc
-    ranger
 
     curl
     wget
 
-    emacs
-    vscode
+    gcc
+    python3
+    cudaPackages.cudatoolkit
 
     zathura
 
-    tmux
+    wl-clipboard
+    cliphist
 
     mpd
     ncmpcpp
     pulseaudio
 
-    xdg-user-dirs
+    lshw
+    upower
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -126,27 +121,17 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.zsh.enable = true;
+
   programs.hyprland = {
     enable = true;
+    enableNvidiaPatches = true;
     xwayland.enable = true;
   };
-
-  programs.thunar.enable = true;
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
-
-  hardware.opengl.enable = true;
-
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-
-  services.flatpak.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -155,7 +140,74 @@
     ];
   };
 
+  programs.thunar.enable = true;
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      nvidia-vaapi-driver
+    ];
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
+
+  hardware.opentabletdriver.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
+  services.blueman.enable = true;
+
+  # usb
+  boot.supportedFilesystems = ["ntfs"];
+  services.udisks2.enable = true;
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.videoDrivers = ["nvidia"];
+
+  services.flatpak.enable = true;
+
+  services.upower.enable = true;
+
   environment.shells = with pkgs; [ zsh ];
+
+  # TODO: move to machine specific
+  networking.enableIPv6 = false;
+  boot.kernel.sysctl."net.ipv6.conf.wlp0s20f3.disable_ipv6" = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -165,23 +217,14 @@
     pulse.enable = true;
   };
 
-  programs.neovim.enable = true;
-  programs.neovim.viAlias = true;
-  programs.neovim.vimAlias = true;
-
-  programs.zsh.enable = true;
-
   programs.ssh.startAgent = true;
 
-  programs.waybar.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;
+  };
 
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
-
-  virtualisation.docker.enable = true;
-
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     comic-relief
     noto-fonts-cjk
     noto-fonts-emoji

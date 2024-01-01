@@ -10,19 +10,21 @@ config.font = wezterm.font_with_fallback {
   'FiraCode Nerd Font Mono',
   'Noto Sans Mono CJK TC'
 }
-config.font_size = 12
+config.font_size = 14
 config.color_scheme = 'Catppuccin Frappe'
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 config.window_padding = {
-  left = '3cell',
-  right = '3cell',
+  left = '2cell',
+  right = '2cell',
   top = '1cell',
   bottom = '1cell',
 }
-config.hide_mouse_cursor_when_typing = false
+config.hide_mouse_cursor_when_typing = true
 config.hide_tab_bar_if_only_one_tab = true
 
 config.use_ime = true
+config.enable_wayland = false
+config.dpi = 128.0
 
 config.leader = { key = 'Space', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 }
 config.keys = {
@@ -44,4 +46,3 @@ config.keys = {
 }
 
 return config
-

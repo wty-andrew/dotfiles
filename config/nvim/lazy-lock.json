@@ -1,0 +1,11 @@
+{
+  "catppuccin": { "branch": "main", "commit": "4fbab1f01488718c3d54034a473d0346346b90e3" },
+  "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" },
+  "nvim-autopairs": { "branch": "master", "commit": "9fd41181693dd4106b3e414a822bb6569924de81" },
+  "nvim-surround": { "branch": "main", "commit": "703ec63aa798e5e07d309b35e42def34bebe0174" },
+  "nvim-tree.lua": { "branch": "master", "commit": "50f30bcd8c62ac4a83d133d738f268279f2c2ce2" },
+  "nvim-treesitter": { "branch": "master", "commit": "27f68c0b6a87cbad900b3d016425450af8268026" },
+  "nvim-web-devicons": { "branch": "master", "commit": "43aa2ddf476012a2155f5f969ee55ab17174da7a" },
+  "vim-python-pep8-indent": { "branch": "master", "commit": "60ba5e11a61618c0344e2db190210145083c91f8" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "38b1d0402c4600543281dc85b3f51884205674b6" }
+}
