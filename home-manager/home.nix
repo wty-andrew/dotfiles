@@ -1,12 +1,13 @@
 { config, pkgs, username, ... }:
 {
   imports = [
+   ./editorconfig
+   ./neovim
    ./starship
    ./tmux
   ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
 
@@ -70,4 +71,12 @@
   };
 
   fonts.fontconfig.enable = true;
+
+  # programs.wezterm = {
+  #   enable = true;
+  # };
+
+  # home.keyboard.options = [ "ctrl:nocaps" ]; # not working :(
+
+  # TODO: i18n fcitx
 }

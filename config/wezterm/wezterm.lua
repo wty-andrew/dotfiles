@@ -14,11 +14,12 @@ config.font_size = 12
 config.color_scheme = 'Catppuccin Frappe'
 config.window_background_opacity = 0.9
 config.window_padding = {
-  left = 20,
-  right = 20,
-  top = 20,
-  bottom = 20,
+  left = '2cell',
+  right = '2cell',
+  top = '1cell',
+  bottom = '1cell',
 }
+config.hide_tab_bar_if_only_one_tab = true
 
 config.use_ime = true
 

@@ -13,6 +13,9 @@ indent_style = tab
 [*.{h,hpp,c,cc,cpp}]
 indent_size = 2
 
+[*.{vert,tesc,tese,geom,frag,comp,glsl}]
+indent_size = 2
+
 [*.py]
 indent_size = 4
 
@@ -30,24 +33,19 @@ indent_size = 2
 [*.java]
 indent_size = 4
 
+[*.scala]
+indent_size = 2
+
 [**.html]
 max_char = 78
 brace_style = expand
 
+[*.{xml,launch,test}]
+indent_size = 2
+
 [*.{yaml,yml}]
-indent_size = 2
-
-[*.launch]
-indent_size = 2
-
-[*.test]
-indent_size = 2
-
-[*.{vert,tesc,tese,geom,frag,comp,glsl}]
 indent_size = 2
 
 [*.proto]
 indent_size = 2
 
-[*.scala]
-indent_size = 2
