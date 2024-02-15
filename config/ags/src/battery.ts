@@ -60,6 +60,8 @@ const getLabel = (battery: typeof Battery, display: Display): string => {
 }
 
 const BatteryStatus = () => {
+  if (!Battery.available) return null
+
   let displayType: Display = 'percent'
 
   const icon = Icon()

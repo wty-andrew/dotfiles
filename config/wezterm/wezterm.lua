@@ -24,7 +24,7 @@ config.hide_tab_bar_if_only_one_tab = true
 
 config.use_ime = true
 config.enable_wayland = false
-config.dpi = 128.0
+config.dpi = 96.0
 
 config.leader = { key = 'Space', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 }
 config.keys = {

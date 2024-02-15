@@ -8,9 +8,9 @@
     ];
   };
 
-  services.tumbler.enable = true;
+  services.tumbler.enable = true; # thumbnail
 
   environment.systemPackages = with pkgs; [
-    mate.engrampa
+    mate.engrampa # file archiver
   ];
 }

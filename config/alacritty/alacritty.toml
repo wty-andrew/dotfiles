@@ -1,0 +1,33 @@
+# https://alacritty.org/config-alacritty.html
+
+import = [
+  "~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+[window]
+
+padding = { x = 20, y = 20 }
+
+opacity = 0.9
+
+[font]
+
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+
+size = 14
+
+[selection]
+
+save_to_clipboard = true
+
+[mouse]
+
+hide_when_typing = true
+
+[keyboard]
+
+bindings = [
+  { key = "N", mods = "Control | Shift", action = "SpawnNewInstance" },
+  { key = "Tab", mods = "Control", chars = "\u001b[27;5;9~" },
+  { key = "Tab", mods = "Control | Shift", chars = "\u001b[27;6;9~" }
+]

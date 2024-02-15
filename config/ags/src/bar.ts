@@ -69,27 +69,16 @@ const Bar = (monitor: number) =>
         class_name: 'end',
         hpack: 'end',
         spacing: 5,
-        children: [Audio(), Network(), Battery(), Bluetooth(), Clock(), Tray()],
+        children: [
+          Audio(),
+          Network(),
+          Battery() || [],
+          Bluetooth(),
+          Clock(),
+          Tray(),
+        ].flat(),
       }),
     }),
   })
 
 export default Bar
-
-// import Gtk from 'gi://Gtk?version=3.0'
-// console.log(Gtk.IconTheme.get_default().get_search_path())
-// console.log(Gtk.IconTheme.get_default().list_icons('Applications'))
-// const contexts = [
-//   'Emblems',
-//   'Actions',
-//   'UI',
-//   'Legacy',
-//   'Stock',
-//   'Emotes',
-//   'Categories',
-//   'Devices',
-//   'Places',
-//   'Applications',
-//   'Status',
-//   'MimeTypes',
-// ]
