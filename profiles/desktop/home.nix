@@ -1,10 +1,22 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, username, ... }: {
+  imports = [
+    ../../modules/browser
+    ../../modules/cloud
+    ../../modules/creative
+    ../../modules/editor
+    ../../modules/game
+    ../../modules/lang
+    ../../modules/media
+    ../../modules/organizer
+    ../../modules/system
+    ../../modules/terminal
+    ../../modules/tools
+  ];
 
-{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "andrew";
-  home.homeDirectory = "/home/andrew";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -63,7 +75,7 @@
   #  /etc/profiles/per-user/andrew/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

@@ -21,6 +21,7 @@
     username = "andrew";
     hostname = "nixos";
     system = "x86_64-linux";
+    profile = "desktop";
 
     overlay-unstable = final: prev: {
       unstable = import nixpkgs-unstable {
@@ -34,20 +35,29 @@
       config.allowUnfree = true;
       overlays = [ overlay-unstable ];
     };
+
+    helpers = {
+      # taken from: https://github.com/nix-community/home-manager/issues/257
+      runtimePath = path: "/home/${username}/dotfiles" + nixpkgs.lib.removePrefix (toString self) (toString path);
+    };
   in
   {
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system; };
-	      modules = [ ./nixos/configuration.nix ];
+        specialArgs = { inherit username hostname system; };
+	      modules = [
+          (./. + "/profiles/${profile}/configuration.nix")
+        ];
       };
     };
 
     homeConfigurations = {
       "${username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs username; };
-        modules = [ ./home-manager/home.nix ];
+        extraSpecialArgs = { inherit inputs username helpers; };
+        modules = [
+          (./. + "/profiles/${profile}/home.nix")
+        ];
       };
     };
   };

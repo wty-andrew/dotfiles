@@ -2,12 +2,26 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, username, hostname, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      ../../system/desktop-environment/fonts.nix
+      ../../system/desktop-environment/hyprland.nix
+      ../../system/desktop-environment/thunar.nix
+      ../../system/desktop-environment/zsh.nix
+
+      ../../system/hardware/bluetooth.nix
+      ../../system/hardware/nvidia.nix
+      ../../system/hardware/opengl.nix
+      ../../system/hardware/tablet.nix
+      ../../system/hardware/usb.nix
+      ../../system/hardware/utilities.nix
+
+      ../../system/services/flatpak.nix
+
+      ../../system/virtualisation/docker.nix
     ];
 
   # Bootloader.
@@ -24,7 +38,7 @@
     };
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -41,23 +55,19 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
+    LC_ADDRESS = "zh_TW.UTF-8";
+    LC_IDENTIFICATION = "zh_TW.UTF-8";
+    LC_MEASUREMENT = "zh_TW.UTF-8";
+    LC_MONETARY = "zh_TW.UTF-8";
+    LC_NAME = "zh_TW.UTF-8";
+    LC_NUMERIC = "zh_TW.UTF-8";
+    LC_PAPER = "zh_TW.UTF-8";
+    LC_TELEPHONE = "zh_TW.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -66,7 +76,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -89,14 +99,11 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.andrew = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "andrew";
+    description = username;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
+    packages = with pkgs; [];
   };
 
   # Allow unfree packages
@@ -105,8 +112,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -122,6 +128,8 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  programs.ssh.startAgent = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -136,4 +144,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
