@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.starship =
     let
-      flavour = "frappe"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
+      flavour = "frappe";
     in
     {
       enable = true;
@@ -11,8 +11,7 @@
           success_symbol = "[➜](bold green)";
           error_symbol = "[○](bold red)";
         };
-        format = "$all"; # Remove this line to disable the default prompt format
-        # gcloud.disabled = true;
+        format = "$all";
         palette = "catppuccin_${flavour}";
       } // builtins.fromTOML (builtins.readFile
         (pkgs.fetchFromGitHub

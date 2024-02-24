@@ -1,15 +1,14 @@
-{ config, pkgs, username, hostname, ... }: {
+{ username, ... }: {
   imports =
     [
-      # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
       ../base/configuration.nix
 
-      ../../system/desktop-environment/fonts.nix
       ../../system/desktop-environment/gdm.nix
       ../../system/desktop-environment/hyprland.nix
       ../../system/desktop-environment/locale.nix
+      ../../system/desktop-environment/polkit.nix
       ../../system/desktop-environment/thunar.nix
       ../../system/desktop-environment/zsh.nix
 
@@ -31,6 +30,18 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  hardware.nvidia = {
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
 
   users.users.${username}.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILIuynSO6FWcjrDPEgP3no4xvueymGvITC++JImPOGbh wty.andrew@gmail.com"

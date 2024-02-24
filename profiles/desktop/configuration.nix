@@ -5,10 +5,10 @@
 
       ../base/configuration.nix
 
-      ../../system/desktop-environment/fonts.nix
       ../../system/desktop-environment/gdm.nix
       ../../system/desktop-environment/hyprland.nix
       ../../system/desktop-environment/locale.nix
+      ../../system/desktop-environment/polkit.nix
       ../../system/desktop-environment/thunar.nix
       ../../system/desktop-environment/zsh.nix
 

@@ -6,5 +6,8 @@
 
   programs.git.enable = true;
 
-  home.file.".gitconfig".source = ../../config/.gitconfig;
+  home.file = {
+    ".gitconfig".source = ../../config/.gitconfig;
+    ".gitignore".source = ../../config/.gitignore;
+  };
 }

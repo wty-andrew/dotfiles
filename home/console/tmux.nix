@@ -35,8 +35,8 @@
       bind | split-window -h
       bind - split-window -v
 
-      bind -n M-L next-window
-      bind -n M-H previous-window
+      bind -n M-] next-window
+      bind -n M-[ previous-window
       bind -n C-Tab next-window
       bind -n C-S-Tab previous-window
 

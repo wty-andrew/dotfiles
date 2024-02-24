@@ -3,7 +3,9 @@
     ../base/home.nix
 
     ../../home/browser
+    ../../home/capture
     ../../home/cloud
+    ../../home/console
     ../../home/creative
     ../../home/editor
     ../../home/game

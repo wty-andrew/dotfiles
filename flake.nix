@@ -32,16 +32,18 @@
     };
 
     ags.url = "github:Aylur/ags";
+
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, emacs-overlay, ... }:
     let
       username = "andrew";
       hostname = "nixos";
       system = "x86_64-linux";
       profile = "desktop";
 
-      overlay-unstable = final: prev: {
+      unstable-overlay = final: prev: {
         unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -51,12 +53,20 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ overlay-unstable ];
+        overlays = [ unstable-overlay emacs-overlay.overlay ];
       };
 
       helpers = {
         # taken from: https://github.com/nix-community/home-manager/issues/257
         runtimePath = path: "/home/${username}/dotfiles" + nixpkgs.lib.removePrefix (toString self) (toString path);
+
+        # taken from: https://www.reddit.com/r/NixOS/comments/scf0ui/how_would_i_update_desktop_file/
+        patchDesktopEntry = pkg: appName: from: to: nixpkgs.lib.hiPrio (
+          pkgs.runCommand "patched-desktop-entry-for-${appName}" { } ''
+            ${pkgs.coreutils}/bin/mkdir -p $out/share/applications
+            ${pkgs.gnused}/bin/sed 's#${from}#${to}#g' < ${pkg}/share/applications/${appName}.desktop > $out/share/applications/${appName}.desktop
+          ''
+        );
       };
     in
     {

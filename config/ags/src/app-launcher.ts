@@ -86,7 +86,6 @@ const AppLauncher = ({ width = 500, height = 500, spacing = 12 }) => {
 export default () =>
   Widget.Window({
     name: WINDOW_NAME,
-    popup: true,
     visible: false,
     keymode: 'on-demand',
     child: AppLauncher({
@@ -94,4 +93,5 @@ export default () =>
       height: 500,
       spacing: 12,
     }),
+    setup: (self) => self.keybind('Escape', () => App.closeWindow(WINDOW_NAME)),
   })

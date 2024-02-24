@@ -36,8 +36,8 @@ const BarLauncher = () => {
       child: Box({
         children: [
           Icon({
-            icon: 'address-book-new-symbolic',
-            size: 16,
+            icon: 'nixoscolorful',
+            size: 18,
           }),
           revealer,
         ],

@@ -3,7 +3,6 @@
     # modern alternatives
     duf
     fd
-    lsd
     procs
     ripgrep
 

@@ -26,36 +26,36 @@ const Image = (src: string) =>
 const Title = (text: string) =>
   Label({
     label: text,
-    // class_name: 'title',
-    // xalign: 0,
-    // justification: 'left',
-    // hexpand: true,
-    // max_width_chars: 24,
-    // truncate: 'end',
-    // wrap: true,
-    // use_markup: true,
+    class_name: 'title',
+    xalign: 0,
+    justification: 'left',
+    hexpand: true,
+    max_width_chars: 24,
+    truncate: 'end',
+    use_markup: true,
+    wrap: true,
   })
 
 const Content = (text: string) =>
   Label({
     label: text,
-    // class_name: 'body',
-    // hexpand: true,
-    // use_markup: true,
-    // xalign: 0,
-    // justification: 'left',
-    // wrap: true,
+    class_name: 'body',
+    xalign: 0,
+    justification: 'left',
+    hexpand: true,
+    use_markup: true,
+    wrap: true,
   })
 
 const ActionButton = (label: string, onClick: () => void): GtkWidget =>
   Button({
-    // class_name: 'action-button',
-    // hexpand: true,
+    class_name: 'action-button',
     on_clicked: onClick,
+    hexpand: true,
     child: Label(label),
   })
 
-const findIcon = (icon: string, entry: string | null) => {
+const findIcon = (icon: string, entry?: string) => {
   if (entry && lookUpIcon(entry)) return entry
   if (lookUpIcon(icon)) return icon
   return 'dialog-information-symbolic'
@@ -71,19 +71,22 @@ const Popup = (notification: Notification): GtkWidget => {
     image,
     app_icon,
     app_entry,
+    urgency,
   } = notification
   return EventBox({
     on_primary_click: () => dismiss(),
     child: Box({
-      // class_name: `notification ${n.urgency}`,
+      class_name: `notification ${urgency}`,
       vertical: true,
       children: [
         Box({
           children: [
             Box({
+              class_name: 'icon',
               vpack: 'start',
-              // class_name: 'icon',
-              child: image ? Image(image) : Icon(findIcon(app_icon, app_entry)),
+              child: (image
+                ? Image(image)
+                : Icon(findIcon(app_icon, app_entry))) as GtkWidget,
             }),
             Box({
               vertical: true,
@@ -92,7 +95,7 @@ const Popup = (notification: Notification): GtkWidget => {
           ],
         }),
         Box({
-          // class_name: 'actions',
+          class_name: 'actions',
           children: actions.map(({ id, label }) =>
             ActionButton(label, () => invoke(id))
           ),

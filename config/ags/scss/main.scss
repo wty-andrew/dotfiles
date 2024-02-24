@@ -13,9 +13,9 @@
 }
 
 .box {
-  color: black;
+  color: $text;
   border-radius: 6px;
-  background-color: #f5eee6;
+  background-color: $base;
   padding: 2px 6px;
 }
 
@@ -30,20 +30,15 @@
   all: unset;
 
   margin: 0 5px;
-  color: #7aa2f7;
+  color: $blue;
 
   &.occupied {
-    color: #9ece6a;
+    color: $mauve;
   }
 
   &.active {
     color: #bfc9db;
   }
-}
-
-
-.popup {
-  color: blue;
 }
 
 window#notifications {
@@ -64,6 +59,7 @@ window#notifications box.notifications {
   font-size: 58px;
   /* to center the icon */
   margin: 5px;
+  color: $text;
 }
 
 .icon box {
@@ -77,14 +73,21 @@ window#notifications box.notifications {
   border-radius: 11px;
   padding: 1em;
   margin: 0.5em;
+  border: 2px solid $blue;
+  background-color: $base;
 }
 
 .notification.critical {
-  border: 1px solid lightcoral;
+  border: 2px solid $red;
 }
 
 .title {
+  color: $text;
   font-size: 1.4em;
+}
+
+.body {
+  color: $subtext0;
 }
 
 .actions .action-button {

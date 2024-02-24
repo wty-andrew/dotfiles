@@ -24,7 +24,9 @@ if (GLib.getenv('NODE_ENV') === 'development') {
 
 compileScss()
 
-const windows = (await import(`file://${OUT_DIR}/main.js`)).default
+App.addIcons(`${App.configDir}/assets/icon`)
+
+const { default: windows } = await import(`file://${OUT_DIR}/main.js`)
 
 export default {
   style: CSS_PATH,

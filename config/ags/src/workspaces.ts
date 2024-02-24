@@ -26,7 +26,7 @@ const WorkspaceButton = (i: number) =>
 const Workspaces = () =>
   Box({
     class_name: 'workspaces',
-    children: range(1, 6).map(WorkspaceButton),
+    children: range(1, 8).map(WorkspaceButton),
   })
 
 export default Workspaces
