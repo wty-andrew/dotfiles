@@ -86,6 +86,7 @@
 (bind-key "C-l" #'evil-window-right)
 (map! :leader "w -" #'evil-window-split)
 (map! :leader "w /" #'evil-window-vsplit)
+(map! :leader "SPC" #'execute-extended-command)
 
 (bind-key "M-]" #'next-buffer)
 (bind-key "M-[" #'next-buffer)
@@ -96,6 +97,9 @@
   #'doom-dashboard-widget-footer )
 
 (add-to-list 'default-frame-alist '(alpha-background . 90))
+
+(custom-set-faces!
+  '(line-number :inherit fixed-pitch))
 
 ;; Treemacs
 (setq treemacs-position 'right)
