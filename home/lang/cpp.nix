@@ -1,8 +1,9 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    clang-tools
+    clang-tools_17
     cmake
     gcc
     gnumake
+    xmake
   ];
 }

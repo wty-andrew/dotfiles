@@ -26,22 +26,23 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    hycov = {
-      url = "github:DreamMaoMao/hycov";
-      inputs.hyprland.follows = "hyprland";
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    ags.url = "github:Aylur/ags";
-
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, emacs-overlay, ... }:
     let
-      username = "andrew";
-      hostname = "nixos";
       system = "x86_64-linux";
-      profile = "desktop";
+      hostname = "nixos";
+      username = "andrew";
 
       unstable-overlay = final: prev: {
         unstable = import nixpkgs-unstable {
@@ -68,25 +69,29 @@
           ''
         );
       };
-    in
-    {
-      nixosConfigurations = {
-        ${hostname} = nixpkgs.lib.nixosSystem {
+
+      forAllProfiles = nixpkgs.lib.genAttrs [ "desktop" "laptop" "wsl" ];
+
+      mkNixos = profile:
+        nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs username hostname system; };
           modules = [
             (./. + "/profiles/${profile}/configuration.nix")
           ];
         };
-      };
 
-      homeConfigurations = {
-        ${username} = home-manager.lib.homeManagerConfiguration {
+      mkHome = profile:
+        home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs username helpers; };
           modules = [
             (./. + "/profiles/${profile}/home.nix")
           ];
         };
-      };
+    in
+    {
+      nixosConfigurations = forAllProfiles mkNixos;
+
+      homeConfigurations = forAllProfiles mkHome;
     };
 }

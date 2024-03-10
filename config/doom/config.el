@@ -22,9 +22,9 @@
 ;; accept. For example:
 ;;
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18)
-      doom-variable-pitch-font (font-spec :family "Andika" :size 20)
+      doom-variable-pitch-font (font-spec :family "Andika")
       doom-symbol-font (font-spec :family "Symbola")
-      doom-serif-font (font-spec :family "FiraCode Nerd Font" :size 18)
+      doom-serif-font (font-spec :family "FiraCode Nerd Font")
       doom-emoji-font (font-spec :family "Noto Color Emoji"))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -84,12 +84,14 @@
 (bind-key "C-k" #'evil-window-up)
 (bind-key "C-h" #'evil-window-left)
 (bind-key "C-l" #'evil-window-right)
+(bind-key "M-]" #'next-buffer)
+(bind-key "M-[" #'next-buffer)
+(bind-key "M-j" #'drag-stuff-down)
+(bind-key "M-k" #'drag-stuff-up)
+
 (map! :leader "w -" #'evil-window-split)
 (map! :leader "w /" #'evil-window-vsplit)
 (map! :leader "SPC" #'execute-extended-command)
-
-(bind-key "M-]" #'next-buffer)
-(bind-key "M-[" #'next-buffer)
 
 ;; Appearance
 (remove-hook! '+doom-dashboard-functions
@@ -98,36 +100,27 @@
 
 (add-to-list 'default-frame-alist '(alpha-background . 90))
 
-(custom-set-faces!
-  '(line-number :inherit fixed-pitch))
-
 ;; Treemacs
 (setq treemacs-position 'right)
 
 ;; Org Mode
-(setq org-hide-emphasis-markers t
-      org-ellipsis " ▾ ")
+(after! org
+  (setq org-hide-emphasis-markers t
+        org-ellipsis " ▾ "
+        org-fontify-done-headline nil)
+  (setq org-superstar-headline-bullets-list '(?🞺 ?🞹 ?🞸 ?🞷 ?🞶)
+        org-superstar-item-bullet-alist '((?- . ?•) (?+ . ?◦) (?* . ?🟉)))
+  (setq org-list-demote-modify-bullet '(("-" . "+")
+                                        ("+" . "-")
+                                        ("1." . "-")
+                                        ("1)" . "-")
+                                        ("A." . "-")
+                                        ("A)" . "-"))))
 
 (custom-set-faces!
-  `(org-block :inherit (fixed-pitch org-quote))
-  `(org-block-begin-line :inherit (shadow org-block))
-  '(org-block-end-line :inherit org-block-begin-line)
-  `(org-code :inherit fixed-pitch :foreground ,(catppuccin-get-color 'green))
-  '(org-ellipsis :inherit shadow)
-  '(org-indent :inherit (org-hide fixed-pitch))
   `(org-quote :background ,(catppuccin-get-color 'mantle) :extend t)
-  `(org-table :inherit fixed-pitch :foreground ,(catppuccin-get-color 'sapphire))
-  `(org-verbatim :inherit fixed-pitch :foreground ,(catppuccin-get-color 'teal)))
-
-(setq org-superstar-headline-bullets-list '(?🞺 ?🞹 ?🞸 ?🞷 ?🞶)
-      org-superstar-item-bullet-alist '((?- . ?•) (?+ . ?◦) (?* . ?🟉)))
-
-(setq org-list-demote-modify-bullet '(("-" . "+")
-                                      ("+" . "-")
-                                      ("1." . "-")
-                                      ("1)" . "-")
-                                      ("A." . "-")
-                                      ("A)" . "-")))
+  `(org-table :foreground ,(catppuccin-get-color 'teal))
+  `(org-verbatim :foreground ,(catppuccin-get-color 'green)))
 
 (defun prettify-org-symbols ()
   (setq prettify-symbols-alist '(("[ ]" . "")
@@ -141,8 +134,23 @@
                                  ("#+end_quote" . ""))))
 
 (add-hook! org-mode
-           #'variable-pitch-mode
-           #'prettify-org-symbols)
+           #'mixed-pitch-mode
+           #'copilot-mode
+           #'prettify-org-symbols
+           (text-scale-increase 1))
+
+(setq org-agenda-files (list (concat org-directory "agenda")))
 
 ;; Misc
 (setq inferior-lisp-program "ros -Q run")
+
+;; Copilot
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
+(setq copilot-indent-offset-warning-disable t)

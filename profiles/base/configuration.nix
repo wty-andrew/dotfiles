@@ -17,6 +17,8 @@
   system.stateVersion = "23.11";
 
   nix.settings = {
+    auto-optimise-store = true;
+
     experimental-features = [ "nix-command" "flakes" ];
 
     trusted-users = [ "root" "@wheel" ];
