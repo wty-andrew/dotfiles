@@ -33,8 +33,6 @@
       };
 
     extraConfig = ''
-      env = GDK_SCALE,2
-
       bind = $mainMod, B, exec, nvidia-offload firefox
     '';
   };

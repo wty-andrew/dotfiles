@@ -28,7 +28,7 @@ App.addIcons(`${App.configDir}/assets/icon`)
 
 const { default: windows } = await import(`file://${OUT_DIR}/main.js`)
 
-export default {
+App.config({
   style: CSS_PATH,
   windows,
-}
+})

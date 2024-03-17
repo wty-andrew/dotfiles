@@ -12,6 +12,7 @@
           error_symbol = "[○](bold red)";
         };
         format = "$all";
+        gcloud.disabled = true;
         palette = "catppuccin_${flavour}";
       } // builtins.fromTOML (builtins.readFile
         (pkgs.fetchFromGitHub

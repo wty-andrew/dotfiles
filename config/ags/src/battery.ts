@@ -5,6 +5,7 @@ import {
   Icon,
   Label,
 } from 'resource:///com/github/Aylur/ags/widget.js'
+import { subprocess } from 'resource:///com/github/Aylur/ags/utils.js'
 
 type BatteryLevel = 'empty' | 'caution' | 'low' | 'good' | 'full'
 
@@ -59,8 +60,13 @@ const getLabel = (battery: typeof Battery, display: Display): string => {
   }
 }
 
+const hasBattery = () => {
+  const proc = subprocess('[ -d "/sys/module/battery" ]', () => void 0)!
+  return proc.wait(null) && proc.get_successful()
+}
+
 const BatteryStatus = () => {
-  if (!Battery.available) return null
+  if (!hasBattery()) return null
 
   let displayType: Display = 'percent'
 
