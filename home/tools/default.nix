@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ./appimage.nix
     ./bruno.nix
     ./editorconfig.nix
     ./gcloud.nix

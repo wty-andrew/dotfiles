@@ -12,24 +12,25 @@
     wget
 
     # monitoring
-    htop
     btop
-    iotop
+    htop
     iftop
+    iotop
 
     # cheatsheet
     cheat
     tldr
 
     # archive
-    zip
-    unzip
     unrar
+    unzip
+    zip
 
     # misc
+    file
+    fzf
     jq
     just
-    fzf
     neofetch
   ];
 }
