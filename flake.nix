@@ -2,50 +2,50 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ags = {
       url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, emacs-overlay, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, ... }:
     let
       system = "x86_64-linux";
       hostname = "nixos";
       username = "andrew";
 
-      unstable-overlay = final: prev: {
-        unstable = import nixpkgs-unstable {
+      stable-overlay = final: prev: {
+        stable = import nixpkgs-stable {
           inherit system;
           config.allowUnfree = true;
         };
@@ -54,7 +54,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ unstable-overlay emacs-overlay.overlay ];
+        overlays = [ stable-overlay emacs-overlay.overlay ];
       };
 
       helpers = {

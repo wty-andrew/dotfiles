@@ -1,5 +1,6 @@
 {
   "eslint.workingDirectories": [
     "config/ags"
-  ]
+  ],
+  "nixEnvSelector.suggestion": false
 }

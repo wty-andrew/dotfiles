@@ -9,9 +9,11 @@ in
       virtualenv
       jupyter
     ]))
+    (poetry.withPlugins (ps: with ps; [
+      poetry-plugin-up
+    ]))
     pyenv
-    poetry
-    unstable.ruff
+    ruff
   ];
 
   home.sessionVariables = {

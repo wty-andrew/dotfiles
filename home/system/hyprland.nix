@@ -20,6 +20,6 @@
 
   home.packages = [
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
-    inputs.hyprland-contrib.packages.${pkgs.system}.hdrop
+    # inputs.hyprland-contrib.packages.${pkgs.system}.hdrop
   ];
 }

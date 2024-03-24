@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   # https://nixos.wiki/wiki/Visual_Studio_Code
   home.packages = with pkgs; [
-    unstable.vscode.fhs
+    vscode.fhs
   ];
 
   # https://discourse.nixos.org/t/how-to-install-latest-vscode-insiders/7895

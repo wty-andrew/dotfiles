@@ -28,7 +28,7 @@
       fpath+=(${toString ../../config/zsh/site-functions})
     '';
 
-    plugins = with pkgs.unstable; [
+    plugins = with pkgs; [
       {
         name = "fzf-tab";
         src = zsh-fzf-tab;
