@@ -1,11 +1,6 @@
-import Battery from 'resource:///com/github/Aylur/ags/service/battery.js'
-import {
-  Box,
-  EventBox,
-  Icon,
-  Label,
-} from 'resource:///com/github/Aylur/ags/widget.js'
-import { subprocess } from 'resource:///com/github/Aylur/ags/utils.js'
+const Battery = await Service.import('battery')
+
+const { Box, EventBox, Icon, Label } = Widget
 
 type BatteryLevel = 'empty' | 'caution' | 'low' | 'good' | 'full'
 
@@ -60,10 +55,7 @@ const getLabel = (battery: typeof Battery, display: Display): string => {
   }
 }
 
-const hasBattery = () => {
-  const proc = subprocess('[ -d "/sys/module/battery" ]', () => void 0)!
-  return proc.wait(null) && proc.get_successful()
-}
+const hasBattery = () => Utils.exec('ls -A /sys/class/power_supply').length > 0
 
 const BatteryStatus = () => {
   if (!hasBattery()) return null

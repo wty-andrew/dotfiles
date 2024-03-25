@@ -1,15 +1,8 @@
-import Notifications, {
-  type Notification,
-} from 'resource:///com/github/Aylur/ags/service/notifications.js'
-import {
-  Box,
-  Button,
-  Icon,
-  Label,
-  EventBox,
-  Window,
-} from 'resource:///com/github/Aylur/ags/widget.js'
-import { lookUpIcon } from 'resource:///com/github/Aylur/ags/utils.js'
+import type { Notification } from 'types/service/notifications'
+
+const Notifications = await Service.import('notifications')
+
+const { Box, Button, Icon, Label, EventBox, Window } = Widget
 
 type GtkWidget = ReturnType<typeof Box>['child']
 
@@ -56,8 +49,8 @@ const ActionButton = (label: string, onClick: () => void): GtkWidget =>
   })
 
 const findIcon = (icon: string, entry?: string) => {
-  if (entry && lookUpIcon(entry)) return entry
-  if (lookUpIcon(icon)) return icon
+  if (entry && Utils.lookUpIcon(entry)) return entry
+  if (Utils.lookUpIcon(icon)) return icon
   return 'dialog-information-symbolic'
 }
 

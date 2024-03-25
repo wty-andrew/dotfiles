@@ -1,14 +1,3 @@
-import {
-  Box,
-  CenterBox,
-  EventBox,
-  Icon,
-  Label,
-  Revealer,
-  Window,
-} from 'resource:///com/github/Aylur/ags/widget.js'
-import App from 'resource:///com/github/Aylur/ags/app.js'
-
 import Workspaces from './workspaces'
 import Battery from './battery'
 import Network from './network'
@@ -17,30 +6,15 @@ import Clock from './clock'
 import Bluetooth from './bluetooth'
 import Tray from './tray'
 
-const BarLauncher = () => {
-  const revealer = Revealer({
-    transition: 'slide_left',
-    transition_duration: 500,
-    child: Label({
-      class_name: 'bar',
-      label: 'Launcher',
-    }),
-    css: 'padding-left: 10px;',
-  })
+const { Box, CenterBox, EventBox, Icon, Window } = Widget
 
+const BarLauncher = () => {
   return Box({
     child: EventBox({
       on_primary_click: () => App.toggleWindow('applauncher'),
-      on_hover: () => (revealer.reveal_child = true),
-      on_hover_lost: () => (revealer.reveal_child = false),
-      child: Box({
-        children: [
-          Icon({
-            icon: 'nixoscolorful',
-            size: 18,
-          }),
-          revealer,
-        ],
+      child: Icon({
+        icon: 'nixoscolorful',
+        size: 18,
       }),
     }),
   })

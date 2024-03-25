@@ -1,10 +1,6 @@
 import GLib from 'gi://GLib'
-import Variable from 'resource:///com/github/Aylur/ags/variable.js'
-import {
-  Box,
-  EventBox,
-  Label,
-} from 'resource:///com/github/Aylur/ags/widget.js'
+
+const { Box, EventBox, Label } = Widget
 
 const now = () => GLib.DateTime.new_now_local()
 

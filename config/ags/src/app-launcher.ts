@@ -1,10 +1,8 @@
-import Widget from 'resource:///com/github/Aylur/ags/widget.js'
-import App from 'resource:///com/github/Aylur/ags/app.js'
-import Applications, {
-  Application,
-} from 'resource:///com/github/Aylur/ags/service/applications.js'
+import type { Application } from 'types/service/applications'
 
 const WINDOW_NAME = 'applauncher'
+
+const Applications = await Service.import('applications')
 
 const AppItem = (app: Application) =>
   Widget.Button({

@@ -14,23 +14,18 @@
     "format": "prettier dist --write"
   },
   "devDependencies": {
-    "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.7",
-    "@babel/plugin-syntax-jsx": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
-    "@girs/dbusmenugtk3-0.4": "^0.4.0-3.2.6",
-    "@girs/gobject-2.0": "^2.78.0-3.2.6",
-    "@girs/gtk-3.0": "^3.24.38-3.2.6",
-    "@girs/gvc-1.0": "^1.0.0-3.2.6",
-    "@girs/nm-1.0": "^1.45.1-3.2.6",
-    "@types/babel__core": "^7.20.5",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "eslint": "^8.56.0",
+    "@girs/gdk-3.0": "3.24.41-3.2.9",
+    "@girs/gio-2.0": "2.78.0-3.2.9",
+    "@girs/gobject-2.0": "2.78.0-3.2.9",
+    "@girs/gtk-3.0": "3.24.41-3.2.9",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "nodemon": "^3.0.2",
-    "prettier": "^3.1.1"
+    "eslint-plugin-prettier": "^5.1.3",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
   },
   "eslintConfig": {
     "root": true,
@@ -42,7 +37,33 @@
       "eslint:recommended",
       "plugin:prettier/recommended"
     ],
-    "parser": "@typescript-eslint/parser"
+    "parser": "@typescript-eslint/parser",
+    "globals": {
+      "Widget": "readonly",
+      "Utils": "readonly",
+      "App": "readonly",
+      "Variable": "readonly",
+      "Service": "readonly",
+      "pkg": "readonly",
+      "ARGV": "readonly",
+      "Debugger": "readonly",
+      "GIRepositoryGType": "readonly",
+      "globalThis": "readonly",
+      "imports": "readonly",
+      "Intl": "readonly",
+      "log": "readonly",
+      "logError": "readonly",
+      "print": "readonly",
+      "printerr": "readonly",
+      "window": "readonly",
+      "TextEncoder": "readonly",
+      "TextDecoder": "readonly",
+      "console": "readonly",
+      "setTimeout": "readonly",
+      "setInterval": "readonly",
+      "clearTimeout": "readonly",
+      "clearInterval": "readonly"
+    }
   },
   "eslintIgnore": [
     "types"

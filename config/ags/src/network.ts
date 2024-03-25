@@ -1,5 +1,6 @@
-import Network from 'resource:///com/github/Aylur/ags/service/network.js'
-import { Box, Icon, Stack } from 'resource:///com/github/Aylur/ags/widget.js'
+const Network = await Service.import('network')
+
+const { Box, Icon, Stack } = Widget
 
 const Wifi = () =>
   Box({

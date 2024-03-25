@@ -1,5 +1,6 @@
-import Bluetooth from 'resource:///com/github/Aylur/ags/service/bluetooth.js'
-import { Box, Icon } from 'resource:///com/github/Aylur/ags/widget.js'
+const Bluetooth = await Service.import('bluetooth')
+
+const { Box, Icon } = Widget
 
 const getIcon = (enabled: boolean) =>
   `bluetooth-${enabled ? 'active' : 'disabled'}-symbolic`

@@ -1,11 +1,6 @@
-import Audio from 'resource:///com/github/Aylur/ags/service/audio.js'
-import {
-  Box,
-  Icon,
-  Label,
-  EventBox,
-} from 'resource:///com/github/Aylur/ags/widget.js'
-import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js'
+const Audio = await Service.import('audio')
+
+const { Box, EventBox, Icon, Label } = Widget
 
 type AudioLevel = 'low' | 'medium' | 'high'
 
@@ -47,7 +42,8 @@ const getLabel = (audio: typeof Audio): string => {
 }
 
 // https://github.com/Aylur/ags/issues/123
-const toggleMute = () => execAsync('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle')
+const toggleMute = () =>
+  Utils.execAsync('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle')
 
 const AudioStatus = () => {
   const icon = Icon()

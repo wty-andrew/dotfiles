@@ -1,8 +1,10 @@
 import Gdk from 'gi://Gdk'
-import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js'
-import { Box, Button } from 'resource:///com/github/Aylur/ags/widget.js'
+
+const Hyprland = await Service.import('hyprland')
 
 import { range } from './utils'
+
+const { Box, Button } = Widget
 
 const display = Gdk.Display.get_default()
 
