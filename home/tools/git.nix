@@ -4,7 +4,10 @@
     gitmoji-cli
   ];
 
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 
   home.file = {
     ".gitconfig".source = ../../config/.gitconfig;

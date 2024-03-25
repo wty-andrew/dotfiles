@@ -1,12 +1,11 @@
 import GLib from 'gi://GLib'
-import App from 'resource:///com/github/Aylur/ags/app.js'
-import { exec, subprocess } from 'resource:///com/github/Aylur/ags/utils.js'
 
 const OUT_DIR = `${App.configDir}/dist`
 const SCSS_PATH = `${App.configDir}/scss/main.scss`
 const CSS_PATH = `${OUT_DIR}/style.css`
 
-const compileScss = () => exec(`sassc -t expanded ${SCSS_PATH} ${CSS_PATH}`)
+const compileScss = () =>
+  Utils.exec(`sassc -t expanded ${SCSS_PATH} ${CSS_PATH}`)
 
 const reloadStyle = () => {
   compileScss()
@@ -16,7 +15,7 @@ const reloadStyle = () => {
 
 if (GLib.getenv('NODE_ENV') === 'development') {
   const nodemon = `${App.configDir}/node_modules/.bin/nodemon`
-  subprocess(
+  Utils.subprocess(
     `${nodemon} -q -w scss -e scss --on-change-only --exec echo`,
     reloadStyle
   )

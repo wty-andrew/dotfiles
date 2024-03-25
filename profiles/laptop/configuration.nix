@@ -23,9 +23,12 @@
       ../../system/drivers/utilities.nix
 
       ../../system/services/flatpak.nix
+      ../../system/services/locate.nix
+      ../../system/services/ollama.nix
       ../../system/services/ssh.nix
 
       ../../system/virtualisation/docker.nix
+      ../../system/virtualisation/podman.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

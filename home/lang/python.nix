@@ -5,9 +5,11 @@ in
 {
   home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [
+      argcomplete
+      jupyter
+      mypy
       pip
       virtualenv
-      jupyter
     ]))
     (poetry.withPlugins (ps: with ps; [
       poetry-plugin-up
@@ -28,8 +30,8 @@ in
     ".pyenv/plugins/pyenv-virtualenv".source = pkgs.fetchFromGitHub {
       owner = "pyenv";
       repo = "pyenv-virtualenv";
-      rev = "0f83c33a3b8d73550567b6479fedf4d3cdf1ae76";
-      sha256 = "BsKNVLVqJarYu6QoPK0lTzBvDwqYKzYj09CddyQ2jrU=";
+      rev = "37917069ecba16602decd3dd2c8b09121c673a41";
+      sha256 = "AnHU7BSERnTWV7lTvfloptCk4flPvGGbm1GGmju4OnU=";
     };
 
     ".config/ruff".source = ../../config/ruff;

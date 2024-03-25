@@ -7,12 +7,11 @@
     open = false;
     nvidiaSettings = true;
   };
+  hardware.nvidia-container-toolkit.enable = true;
 
   hardware.opengl.extraPackages = [ pkgs.nvidia-vaapi-driver ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  virtualisation.docker.enableNvidia = true;
 
   environment.systemPackages = [ pkgs.cudaPackages.cudatoolkit ];
 }

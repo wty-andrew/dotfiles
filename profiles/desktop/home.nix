@@ -25,19 +25,10 @@
     settings =
       let
         configPath = name: helpers.runtimePath (../../config/hypr + "/${name}.conf");
-        names = [ "nvidia" "variables" "frappe" "keybindings" "plugin" "startup" ];
+        names = [ "nvidia" "variables" "frappe" "keybindings" "plugin" "startup" "desktop" ];
       in
       {
         source = builtins.map configPath names;
       };
-
-    extraConfig = ''
-      bind = $mainMod, B, exec, firefox
-
-      bind = $mainMod, S, exec, grimblast --notify copysave output
-      bind = $mainMod CTRL, S, exec, grimblast --notify copysave active
-      bind = $mainMod ALT, S, exec, grimblast --notify copysave screen
-      bind = $mainMod SHIFT, S, exec, grimblast --notify copysave area
-    '';
   };
 }

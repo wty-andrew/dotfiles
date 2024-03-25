@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    nyxt
+    # TODO: wait for https://github.com/NixOS/nixpkgs/issues/318943
+    # nyxt
   ];
 }

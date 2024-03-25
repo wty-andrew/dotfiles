@@ -1,7 +1,8 @@
 # https://alacritty.org/config-alacritty.html
 
 import = [
-  "~/.config/alacritty/catppuccin-frappe.toml"
+  "~/.config/alacritty/catppuccin-frappe.toml",
+  "~/.config/alacritty/keybindings.toml",
 ]
 
 [window]
@@ -23,11 +24,3 @@ save_to_clipboard = true
 [mouse]
 
 hide_when_typing = true
-
-[keyboard]
-
-bindings = [
-  { key = "N", mods = "Control | Shift", action = "SpawnNewInstance" },
-  { key = "Tab", mods = "Control", chars = "\u001b[27;5;9~" },
-  { key = "Tab", mods = "Control | Shift", chars = "\u001b[27;6;9~" }
-]

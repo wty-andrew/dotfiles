@@ -5,7 +5,9 @@
 
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
-    plugins = [];
+    plugins = [
+      inputs.hycov.packages.${pkgs.system}.hycov
+    ];
 
     systemd.enable = true;
 
@@ -20,6 +22,5 @@
 
   home.packages = [
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
-    # inputs.hyprland-contrib.packages.${pkgs.system}.hdrop
   ];
 }

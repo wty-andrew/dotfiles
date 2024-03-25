@@ -12,6 +12,7 @@
   services.emacs.enable = true;
 
   home.packages = with pkgs; [
+    buku
     editorconfig-core-c
     ripgrep
     shellcheck

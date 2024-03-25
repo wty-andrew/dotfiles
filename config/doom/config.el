@@ -26,6 +26,10 @@
       doom-symbol-font (font-spec :family "Symbola")
       doom-serif-font (font-spec :family "FiraCode Nerd Font")
       doom-emoji-font (font-spec :family "Noto Color Emoji"))
+
+(add-hook! after-setting-font
+           (dolist (charset '(kana han cjk-misc bopomofo))
+             (set-fontset-font t charset (font-spec :family "Noto Sans CJK TC"))))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -44,7 +48,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Dropbox/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -115,12 +119,31 @@
                                         ("1." . "-")
                                         ("1)" . "-")
                                         ("A." . "-")
-                                        ("A)" . "-"))))
+                                        ("A)" . "-")))
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "STRT(s)" "HOLD(h)" "|" "DONE(d)" "KILL(k)")
+          (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)"))
+        org-todo-keyword-faces
+        '(("TODO" . org-todo)
+          ("STRT" . +org-todo-active)
+          ("HOLD" . +org-todo-onhold)
+          ("DONE" . org-done)
+          ("KILL" . +org-todo-cancel)
+          ("[ ]" . org-todo)
+          ("[-]" . +org-todo-active)
+          ("[?]" . +org-todo-onhold)
+          ("[X]" . org-done))))
 
 (custom-set-faces!
   `(org-quote :background ,(catppuccin-get-color 'mantle) :extend t)
   `(org-table :foreground ,(catppuccin-get-color 'teal))
-  `(org-verbatim :foreground ,(catppuccin-get-color 'green)))
+  `(org-verbatim :foreground ,(catppuccin-get-color 'green))
+  `(org-todo :foreground ,(catppuccin-get-color 'pink))
+  `(+org-todo-active :foreground ,(catppuccin-get-color 'flamingo))
+  `(+org-todo-cancel :foreground ,(catppuccin-get-color 'overlay2))
+  `(+org-todo-onhold :foreground ,(catppuccin-get-color 'lavender))
+  `(+org-todo-project :foreground ,(catppuccin-get-color 'blue))
+  `(org-done :foreground ,(catppuccin-get-color 'teal)))
 
 (defun prettify-org-symbols ()
   (setq prettify-symbols-alist '(("[ ]" . "")
@@ -154,3 +177,7 @@
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
 (setq copilot-indent-offset-warning-disable t)
+
+;; ebuku
+(add-hook! ebuku-mode
+  (evil-snipe-local-mode -1))

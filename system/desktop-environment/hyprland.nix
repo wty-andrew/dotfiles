@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   programs.hyprland.enable = true;
 
   programs.nm-applet.enable = true;
@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     # wallpaper
     hyprpaper
-    swww
+    inputs.swww.packages.${pkgs.system}.swww
 
     # clipboard
     cliphist

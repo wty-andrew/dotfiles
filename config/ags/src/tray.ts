@@ -1,7 +1,8 @@
-import SystemTray, {
-  type TrayItem,
-} from 'resource:///com/github/Aylur/ags/service/systemtray.js'
-import { Box, Icon, EventBox } from 'resource:///com/github/Aylur/ags/widget.js'
+import type { TrayItem } from 'types/service/systemtray'
+
+const SystemTray = await Service.import('systemtray')
+
+const { Box, Icon, EventBox } = Widget
 
 type GtkWidget = ReturnType<typeof Box>['child']
 

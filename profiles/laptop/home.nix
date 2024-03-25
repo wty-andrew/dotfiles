@@ -26,14 +26,10 @@
     settings =
       let
         configPath = name: helpers.runtimePath (../../config/hypr + "/${name}.conf");
-        names = [ "nvidia" "variables" "frappe" "keybindings" "plugin" "startup" ];
+        names = [ "nvidia" "variables" "frappe" "keybindings" "plugin" "startup" "laptop" ];
       in
       {
         source = builtins.map configPath names;
       };
-
-    extraConfig = ''
-      bind = $mainMod, B, exec, nvidia-offload firefox
-    '';
   };
 }

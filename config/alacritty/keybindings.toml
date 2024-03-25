@@ -1,0 +1,28 @@
+[keyboard]
+
+bindings = [
+  { key = "N", mods = "Control | Shift", action = "SpawnNewInstance" },
+
+  # http://www.leonerd.org.uk/hacks/fixterms/
+  { key = "H", mods = "Control | Shift", chars = "\u001b[72;6u" },
+  { key = "I", mods = "Control", chars = "\u001b[105;5u" },
+  { key = "I", mods = "Control | Shift", chars = "\u001b[73;5u" },
+  { key = "J", mods = "Control | Shift", chars = "\u001b[74;6u" },
+  { key = "K", mods = "Control | Shift", chars = "\u001b[75;6u" },
+  { key = "L", mods = "Control | Shift", chars = "\u001b[76;6u" },
+  { key = "M", mods = "Control | Shift", chars = "\u001b[77;5u" },
+  { key = "{", mods = "Control | Shift", chars = "\u001b[91;5u" },
+  { key = "}", mods = "Control | Shift", chars = "\u001b[93;5u" },
+  { key = "Period", mods = "Control", chars = "\u001b[46;5u" },
+  { key = "Comma", mods = "Control", chars = "\u001b[44;5u" },
+  { key = "Semicolon", mods = "Control", chars = "\u001b[59;5u" },
+  { key = "Backspace", mods = "Shift", chars = "\u001b[127;2u" },
+  { key = "Tab", mods = "Control", chars = "\u001b[9;5u" },
+  { key = "Tab", mods = "Control | Shift", chars = "\u001b[9;6u" },
+  { key = "Enter", mods = "Shift", chars = "\u001b[13;2u" },
+  { key = "Enter", mods = "Alt | Shift", chars = "\u001b[13;4u" },
+  { key = "Enter", mods = "Control", chars = "\u001b[13;5u" },
+  { key = "Enter", mods = "Control | Shift", chars = "\u001b[13;6u" },
+  { key = "Enter", mods = "Control | Alt", chars = "\u001b[13;7u" },
+  { key = "Enter", mods = "Control | Alt | Shift", chars = "\u001b[13;8u" },
+]

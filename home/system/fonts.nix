@@ -8,4 +8,6 @@
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     symbola
   ];
+
+  home.file.".config/fontconfig/fonts.conf".source = ../../config/fontconfig/fonts.conf;
 }

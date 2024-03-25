@@ -1,3 +1,5 @@
+export const noop = () => void 0
+
 export const range = (startOrStop: number, stop?: number) => {
   const start = stop === undefined ? 0 : startOrStop
   const end = stop || startOrStop
