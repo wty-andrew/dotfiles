@@ -15,8 +15,8 @@
       ../../system/drivers/audio.nix
       ../../system/drivers/bluetooth.nix
       ../../system/drivers/controller.nix
+      ../../system/drivers/graphics.nix
       ../../system/drivers/nvidia.nix
-      ../../system/drivers/opengl.nix
       ../../system/drivers/piper.nix
       ../../system/drivers/tablet.nix
       ../../system/drivers/udev.nix

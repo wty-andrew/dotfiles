@@ -9,7 +9,7 @@
   };
   hardware.nvidia-container-toolkit.enable = true;
 
-  hardware.opengl.extraPackages = [ pkgs.nvidia-vaapi-driver ];
+  hardware.graphics.extraPackages = [ pkgs.nvidia-vaapi-driver ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

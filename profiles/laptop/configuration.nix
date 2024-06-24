@@ -16,8 +16,8 @@
       ../../system/drivers/battery.nix
       ../../system/drivers/brightnessctl.nix
       ../../system/drivers/bluetooth.nix
+      ../../system/drivers/graphics.nix
       ../../system/drivers/nvidia.nix
-      ../../system/drivers/opengl.nix
       ../../system/drivers/tablet.nix
       ../../system/drivers/usb.nix
       ../../system/drivers/utilities.nix
