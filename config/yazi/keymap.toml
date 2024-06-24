@@ -1,0 +1,6 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[manager]
+prepend_keymap = []
+
+append_keymap = []
