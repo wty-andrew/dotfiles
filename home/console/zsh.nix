@@ -24,6 +24,17 @@
       ];
     };
 
+    autosuggestion.enable = true;
+
+    syntaxHighlighting = {
+      enable = true;
+
+      catppuccin = {
+        enable = true;
+        flavor = "frappe";
+      };
+    };
+
     initExtraBeforeCompInit = ''
       fpath+=(${toString ../../config/zsh/site-functions})
     '';
@@ -43,16 +54,6 @@
         name = "zsh-vi-mode";
         src = zsh-vi-mode;
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-      }
-      {
-        name = "zsh-syntax-highlighting";
-        src = zsh-syntax-highlighting;
-        file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
-      }
-      {
-        name = "zsh-autosuggestions";
-        src = zsh-autosuggestions;
-        file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
     ];
   };

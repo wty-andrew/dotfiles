@@ -1,10 +1,17 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   home.packages = with pkgs; [
     minikube
     kubectl
     kubernetes-helm
-    k9s
   ];
 
-  home.file.".config/k9s/skins".source = ../../config/k9s/skins;
+  programs.k9s.enable = true;
+
+  xdg.configFile =
+    let
+      themeFile = "catppuccin-frappe-transparent.yaml";
+    in
+    {
+      "k9s/skins/${themeFile}".source = config.catppuccin.sources.k9s + /dist/${themeFile};
+    };
 }

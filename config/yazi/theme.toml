@@ -31,7 +31,7 @@ border_symbol = "│"
 border_style  = { fg = "#838ba7" }
 
 # Highlighting
-syntect_theme = "~/.config/bat/themes/frappe.tmTheme"
+syntect_theme = "~/.config/bat/themes/Catppuccin Frappe.tmTheme"
 
 [status]
 separator_open  = ""

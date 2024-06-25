@@ -12,9 +12,6 @@
     cliphist
     wl-clipboard
 
-    # app launcher
-    rofi-wayland # TODO: remove when ags is ready
-
     # misc
     libnotify
   ];

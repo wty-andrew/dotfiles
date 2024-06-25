@@ -53,9 +53,11 @@
       url = "github:sxyazi/yazi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, ... }:
     let
       system = "x86_64-linux";
       hostname = "nixos";
@@ -103,6 +105,7 @@
           extraSpecialArgs = { inherit inputs username helpers; };
           modules = [
             (./. + "/profiles/${profile}/home.nix")
+            catppuccin.homeManagerModules.catppuccin
           ];
         };
     in

@@ -35,6 +35,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
+  features = catppuccin-frappe decorations
   navigate = true
   light = false
   line-numbers = true
@@ -56,4 +57,5 @@
 	new = green bold
 	whitespace = red reverse
 [include]
+  path = ~/.config/delta/themes/catppuccin.gitconfig
   path = ~/.gitconfig-local

@@ -9,17 +9,18 @@
     historyLimit = 5000;
     terminal = "tmux-256color";
 
+    catppuccin = {
+      enable = true;
+      flavor = "frappe";
+      extraConfig = ''
+        set -g @catppuccin_window_default_text "#W"
+        set -g @catppuccin_window_current_text "#W"
+        set -g @catppuccin_status_modules_right "directory session"
+        set -g @catppuccin_directory_text "#{pane_current_path}"
+      '';
+    };
+
     plugins = with pkgs.tmuxPlugins; [
-      {
-        plugin = catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_flavour 'frappe'
-          set -g @catppuccin_window_default_text "#W"
-          set -g @catppuccin_window_current_text "#W"
-          set -g @catppuccin_status_modules_right "directory session"
-          set -g @catppuccin_directory_text "#{pane_current_path}"
-        '';
-      }
       vim-tmux-navigator
       yank
     ];

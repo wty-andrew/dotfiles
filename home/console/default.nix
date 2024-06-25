@@ -1,8 +1,11 @@
 { ... }: {
   imports = [
     ./bat.nix
+    ./bottom.nix
     ./broot.nix
+    ./btop.nix
     ./direnv.nix
+    ./fzf.nix
     ./lsd.nix
     ./misc.nix
     ./nushell.nix

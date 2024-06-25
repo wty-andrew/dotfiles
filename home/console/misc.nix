@@ -12,7 +12,6 @@
     wget
 
     # monitoring
-    btop
     htop
     iftop
     iotop
@@ -28,7 +27,6 @@
 
     # misc
     file
-    fzf
     jq
     just
     neofetch
