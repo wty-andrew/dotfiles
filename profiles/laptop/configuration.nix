@@ -19,6 +19,7 @@
       ../../system/drivers/graphics.nix
       ../../system/drivers/nvidia.nix
       ../../system/drivers/tablet.nix
+      ../../system/drivers/udev.nix
       ../../system/drivers/usb.nix
       ../../system/drivers/utilities.nix
 

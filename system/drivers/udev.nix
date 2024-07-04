@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   services.udev.packages = with pkgs; [
-    platformio-core
     openocd
+    platformio-core
+    stlink
   ];
 }

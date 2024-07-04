@@ -10,9 +10,11 @@
     ./kubernetes.nix
     ./mongodb-compass.nix
     ./motrix.nix
+    ./platformio.nix
     ./pulumi.nix
     ./pureref.nix
     ./snapshot.nix
+    ./stlink.nix
     ./terraform.nix
     ./wasmedge.nix
     ./wifi-hotspot.nix
