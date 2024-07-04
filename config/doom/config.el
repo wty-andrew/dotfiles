@@ -132,7 +132,8 @@
           ("[ ]" . org-todo)
           ("[-]" . +org-todo-active)
           ("[?]" . +org-todo-onhold)
-          ("[X]" . org-done))))
+          ("[X]" . org-done)))
+  (setq org-src-fontify-natively t))
 
 (custom-set-faces!
   `(org-quote :background ,(catppuccin-get-color 'mantle) :extend t)
