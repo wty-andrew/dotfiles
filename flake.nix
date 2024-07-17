@@ -12,9 +12,15 @@
     };
 
     hyprland = {
-      # TODO: latest version freezes, using a customize version (v0.39.1 + cherry-pick fcitx fix) for now
-      url = "git+file:///home/andrew/source/Hyprland";
-      # url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+      url = "https://github.com/hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+      type = "git";
+      submodules = true;
+    };
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
     };
 
     hyprland-contrib = {
@@ -25,11 +31,6 @@
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hycov = {
-      url = "github:DreamMaoMao/hycov/0.39.1.1";
-      inputs.hyprland.follows = "hyprland";
     };
 
     swww = {
