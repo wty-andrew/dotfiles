@@ -3,4 +3,6 @@
     nil
     nixpkgs-fmt
   ];
+
+  xdg.configFile."nixpkgs".source = ../../config/nixpkgs;
 }
