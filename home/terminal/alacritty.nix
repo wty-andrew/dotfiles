@@ -3,5 +3,5 @@
     alacritty
   ];
 
-  home.file.".config/alacritty".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/alacritty);
+  xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/alacritty);
 }

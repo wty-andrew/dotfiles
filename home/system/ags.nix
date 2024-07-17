@@ -13,5 +13,5 @@
     ];
   };
 
-  home.file.".config/ags".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/ags);
+  xdg.configFile."ags".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/ags);
 }

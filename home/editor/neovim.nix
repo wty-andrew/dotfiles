@@ -5,5 +5,5 @@
     vimAlias = true;
   };
 
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/nvim);
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/nvim);
 }

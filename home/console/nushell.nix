@@ -3,5 +3,5 @@
     nushell
   ];
 
-  home.file.".config/nushell".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/nushell);
+  xdg.configFile."nushell".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/nushell);
 }

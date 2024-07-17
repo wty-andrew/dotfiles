@@ -20,7 +20,7 @@
     texlive.combined.scheme-medium
   ];
 
-  home.file.".config/doom".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/doom);
+  xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/doom);
 
   home.sessionPath = [
     "${config.home.homeDirectory}/.emacs.d/bin"

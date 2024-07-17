@@ -16,5 +16,5 @@
     in
     lib.genAttrs mimeTypes (_: [ "imv.desktop" ]);
 
-  home.file.".config/imv".source = ../../config/imv;
+  xdg.configFile."imv".source = ../../config/imv;
 }

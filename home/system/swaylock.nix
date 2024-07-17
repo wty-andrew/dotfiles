@@ -4,5 +4,5 @@
     package = pkgs.swaylock-effects;
   };
 
-  home.file.".config/swaylock/config".source = ../../config/swaylock/config;
+  xdg.configFile."swaylock/config".source = ../../config/swaylock/config;
 }

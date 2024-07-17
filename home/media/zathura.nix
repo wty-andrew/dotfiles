@@ -7,5 +7,5 @@
     "application/pdf" = [ "zathura.desktop" ];
   };
 
-  home.file.".config/zathura".source = ../../config/zathura;
+  xdg.configFile."zathura".source = ../../config/zathura;
 }

@@ -19,5 +19,5 @@
     }
   '';
 
-  home.file.".config/yazi".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/yazi);
+  xdg.configFile."yazi".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/yazi);
 }

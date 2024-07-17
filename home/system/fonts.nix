@@ -9,5 +9,5 @@
     symbola
   ];
 
-  home.file.".config/fontconfig/fonts.conf".source = ../../config/fontconfig/fonts.conf;
+  xdg.configFile."fontconfig/fonts.conf".source = ../../config/fontconfig/fonts.conf;
 }

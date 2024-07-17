@@ -3,5 +3,5 @@
     swappy
   ];
 
-  home.file.".config/swappy".source = ../../config/swappy;
+  xdg.configFile."swappy".source = ../../config/swappy;
 }

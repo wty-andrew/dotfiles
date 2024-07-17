@@ -3,5 +3,5 @@
     zellij
   ];
 
-  home.file.".config/zellij".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/zellij);
+  xdg.configFile."zellij".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/zellij);
 }
