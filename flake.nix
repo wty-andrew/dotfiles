@@ -15,7 +15,6 @@
       # TODO: latest version freezes, using a customize version (v0.39.1 + cherry-pick fcitx fix) for now
       url = "git+file:///home/andrew/source/Hyprland";
       # url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland-contrib = {
