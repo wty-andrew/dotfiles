@@ -8,6 +8,7 @@
     ./gcloud.nix
     ./git.nix
     ./kubernetes.nix
+    ./minio.nix
     ./mongodb-compass.nix
     ./motrix.nix
     ./platformio.nix
