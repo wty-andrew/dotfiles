@@ -16,6 +16,10 @@
     iftop
     iotop
 
+    # disk usage
+    ncdu
+    nix-du
+
     # cheatsheet
     cheat
     tldr
