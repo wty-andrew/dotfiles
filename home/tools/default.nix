@@ -14,6 +14,7 @@
     ./platformio.nix
     ./pulumi.nix
     ./pureref.nix
+    ./realvnc.nix
     ./snapshot.nix
     ./stlink.nix
     ./terraform.nix
