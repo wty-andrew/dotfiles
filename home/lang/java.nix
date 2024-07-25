@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    jdk17
+    jdk21
+    gradle
   ];
 }

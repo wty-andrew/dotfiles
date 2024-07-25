@@ -6,7 +6,7 @@ in
   home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [
       argcomplete
-      jupyter
+      jupyterlab
       mypy
       pip
       virtualenv
