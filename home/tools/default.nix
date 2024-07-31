@@ -5,6 +5,7 @@
     ./bruno.nix
     ./cachix.nix
     ./editorconfig.nix
+    ./fluxcd.nix
     ./gcloud.nix
     ./git.nix
     ./kubernetes.nix
