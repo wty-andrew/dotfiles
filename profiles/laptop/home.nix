@@ -6,6 +6,7 @@
     ../../home/capture
     ../../home/creative
     ../../home/console
+    ../../home/devops
     ../../home/editor
     ../../home/lang
     ../../home/media/imv.nix
