@@ -14,6 +14,7 @@
     ../../home/media/spotify.nix
     ../../home/media/vlc.nix
     ../../home/media/zathura.nix
+    ../../home/security
     ../../home/system
     ../../home/terminal
     ../../home/tools

@@ -13,6 +13,7 @@
     ../../home/lang
     ../../home/media
     ../../home/organizer
+    ../../home/security
     ../../home/system
     ../../home/terminal
     ../../home/tools
