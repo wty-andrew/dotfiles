@@ -18,6 +18,7 @@
       ../../system/drivers/brightnessctl.nix
       ../../system/drivers/bluetooth.nix
       ../../system/drivers/graphics.nix
+      ../../system/drivers/keyboard.nix
       ../../system/drivers/nvidia.nix
       ../../system/drivers/tablet.nix
       ../../system/drivers/udev.nix
