@@ -6,7 +6,7 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      # TODO:
     ];
 
     systemd.enable = true;
