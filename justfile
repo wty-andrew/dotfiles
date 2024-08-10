@@ -2,8 +2,9 @@ set dotenv-load
 
 profile := env_var('PROFILE')
 
+[private]
 default:
-  @just -l
+  @just --list --unsorted
 
 update-system:
   sudo nixos-rebuild switch --flake {{justfile_directory()}}#{{profile}}
