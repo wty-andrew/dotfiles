@@ -21,13 +21,15 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       require("catppuccin").setup({
+        flavour = "frappe",
         transparent_background = true,
+        no_italic = true,
         integrations = {
           nvimtree = false,
         },
       })
 
-      vim.cmd.colorscheme "catppuccin-frappe"
+      vim.cmd.colorscheme "catppuccin"
     end,
   },
   {
@@ -90,3 +92,4 @@ require("lazy").setup({
     "Vimjas/vim-python-pep8-indent"
   }
 })
+
