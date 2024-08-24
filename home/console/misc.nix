@@ -30,6 +30,7 @@
     zip
 
     # misc
+    dig
     file
     jq
     just
