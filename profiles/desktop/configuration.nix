@@ -24,6 +24,7 @@
       ../../system/drivers/usb.nix
       ../../system/drivers/utilities.nix
 
+      ../../system/services/avahi.nix
       ../../system/services/flatpak.nix
       ../../system/services/locate.nix
       ../../system/services/ollama.nix
