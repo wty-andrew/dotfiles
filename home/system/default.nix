@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./ags.nix
+    ./docker.nix
     ./fcitx.nix
     ./fonts.nix
     ./gtk.nix

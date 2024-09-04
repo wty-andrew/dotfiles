@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lazydocker.json
+
+gui:
+  theme: # check for hex color support: https://github.com/jesseduffield/lazydocker/issues/502
+    activeBorderColor:
+    - magenta
+    - bold
+    inactiveBorderColor:
+    - white
+    selectedLineBgColor:
+    - black
+    optionsTextColor:
+    - blue

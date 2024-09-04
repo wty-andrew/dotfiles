@@ -5,8 +5,4 @@
   };
 
   users.users.${username}.extraGroups = [ "docker" ];
-
-  environment.systemPackages = with pkgs; [
-    dive
-  ];
 }
