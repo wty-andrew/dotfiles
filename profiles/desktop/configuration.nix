@@ -32,6 +32,9 @@
 
       ../../system/virtualisation/docker.nix
       ../../system/virtualisation/podman.nix
+
+      ./dns.nix
+      ./secrets.nix
     ];
 
   boot.loader = {

@@ -1,0 +1,14 @@
+keys:
+- &admin age104hwtpyk6yffhy6wjqwn06ge3pr0jux4vf5vlf8ayyx8xw8p2v9s588j05
+- &desktop age1ykm8z7l9yrh496uhr9aq0sh5kd9nepm5m5are9ymth087lf02v8sqdferf
+
+creation_rules:
+- path_regex: profiles/desktop/*
+  key_groups:
+  - age:
+    - *admin
+    - *desktop
+- path_regex: profiles/laptop/*
+  key_groups:
+  - age:
+    - *admin

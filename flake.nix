@@ -56,9 +56,14 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, ... }:
     let
       system = "x86_64-linux";
       hostname = "nixos";
@@ -97,6 +102,7 @@
           specialArgs = { inherit inputs username hostname system; };
           modules = [
             (./. + "/profiles/${profile}/configuration.nix")
+            sops-nix.nixosModules.sops
           ];
         };
 
@@ -107,6 +113,7 @@
           modules = [
             (./. + "/profiles/${profile}/home.nix")
             catppuccin.homeManagerModules.catppuccin
+            sops-nix.homeManagerModules.sops
           ];
         };
     in
