@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ./act.nix
     ./fluxcd.nix
     ./gcloud.nix
     ./kubernetes.nix
