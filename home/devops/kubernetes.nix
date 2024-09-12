@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
     minikube
+    krew
     kubectl
     kubernetes-helm
   ];
@@ -14,4 +15,8 @@
     {
       "k9s/skins/${themeFile}".source = config.catppuccin.sources.k9s + /dist/${themeFile};
     };
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.krew/bin"
+  ];
 }
