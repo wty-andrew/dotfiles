@@ -8,7 +8,7 @@
     ./git.nix
     ./minio.nix
     ./mkcert.nix
-    ./mongodb-compass.nix
+    ./mongo.nix
     ./motrix.nix
     ./realvnc.nix
     ./snapshot.nix
