@@ -5,6 +5,7 @@
     ../../home/browser
     ../../home/capture
     ../../home/console
+    ../../home/database
     ../../home/devops
     ../../home/editor
     ../../home/lang

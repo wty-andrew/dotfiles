@@ -7,6 +7,7 @@
     ../../home/cloud
     ../../home/console
     ../../home/creative
+    ../../home/database
     ../../home/devops
     ../../home/editor
     ../../home/game

@@ -7,9 +7,7 @@
     ./caddy.nix
     ./editorconfig.nix
     ./git.nix
-    ./minio.nix
     ./mkcert.nix
-    ./mongo.nix
     ./motrix.nix
     ./realvnc.nix
     ./snapshot.nix
