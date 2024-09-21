@@ -29,6 +29,10 @@
     unzip
     zip
 
+    # nix
+    cachix
+    patchelf
+
     # misc
     dig
     file
