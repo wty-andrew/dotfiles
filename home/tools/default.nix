@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./appimage.nix
+    ./baobab.nix
     ./bruno.nix
     ./cachix.nix
     ./caddy.nix
