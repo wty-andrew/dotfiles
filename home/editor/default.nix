@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ./cursor.nix
     ./emacs.nix
     ./helix.nix
     ./neovim.nix
