@@ -4,16 +4,12 @@
 
     ../../home/browser
     ../../home/capture
-    ../../home/creative
     ../../home/console
     ../../home/devops
     ../../home/editor
     ../../home/lang
-    ../../home/media/imv.nix
-    ../../home/media/mpris.nix
-    ../../home/media/spotify.nix
-    ../../home/media/vlc.nix
-    ../../home/media/zathura.nix
+    ../../home/media
+    ../../home/organizer
     ../../home/security
     ../../home/system
     ../../home/terminal
