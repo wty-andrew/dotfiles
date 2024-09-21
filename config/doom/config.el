@@ -166,6 +166,7 @@
 (setq org-agenda-files (list (concat org-directory "agenda")))
 
 ;; Misc
+(setq browse-url-browser-function 'browse-url-firefox)
 (setq inferior-lisp-program "ros -Q run")
 
 ;; Copilot
