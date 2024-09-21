@@ -3,5 +3,6 @@
     lshw
     inetutils
     pciutils
+    wev
   ];
 }
