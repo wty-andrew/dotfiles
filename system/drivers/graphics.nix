@@ -10,4 +10,10 @@
       libvdpau-va-gl
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    glxinfo
+    libva-utils
+    vulkan-tools
+  ];
 }
