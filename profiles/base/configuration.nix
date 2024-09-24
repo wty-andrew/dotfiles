@@ -29,4 +29,6 @@
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
+
+  programs.nix-ld.enable = true;
 }
