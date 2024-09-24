@@ -8,6 +8,7 @@
     ../../home/database
     ../../home/devops
     ../../home/editor
+    ../../home/embedded
     ../../home/lang
     ../../home/media
     ../../home/organizer
