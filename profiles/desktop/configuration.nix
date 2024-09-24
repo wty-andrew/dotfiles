@@ -33,7 +33,9 @@
       ../../system/virtualisation/docker.nix
       ../../system/virtualisation/podman.nix
 
+      ./certs.nix
       ./dns.nix
+      ./firewall.nix
       ./secrets.nix
     ];
 
