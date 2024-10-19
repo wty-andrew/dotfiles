@@ -1,7 +1,6 @@
-{ inputs, config, pkgs, helpers, ... }: {
+{ config, pkgs, helpers, ... }: {
   programs.yazi = {
     enable = true;
-    package = inputs.yazi.packages.${pkgs.system}.default;
   };
 
   home.packages = with pkgs; [
