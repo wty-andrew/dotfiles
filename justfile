@@ -7,7 +7,13 @@ default:
   @just --list --unsorted
 
 update-system:
-  sudo nixos-rebuild switch --flake {{justfile_directory()}}#{{profile}}
+  sudo nixos-rebuild switch --flake .#{{profile}}
 
 update-home:
-  home-manager switch --flake {{justfile_directory()}}#{{profile}}
+  home-manager switch --flake .#{{profile}}
+
+list-system:
+  nixos-rebuild list-generations
+
+list-home:
+  home-manager generations
