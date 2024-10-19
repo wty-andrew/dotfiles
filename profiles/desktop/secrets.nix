@@ -1,6 +1,6 @@
 { config, username, ... }:
 let
-  home = config.users.users.${username}.home;
+  inherit (config.users.users.${username}) home;
 in
 {
   sops = {

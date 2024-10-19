@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   security.pki.certificates = [
     ''
       -----BEGIN CERTIFICATE-----
