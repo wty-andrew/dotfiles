@@ -16,8 +16,9 @@ auto-save-list
 __pycache__/
 .mypy_cache/
 
-# VS Code
+# Editors
 .vscode/
+.zed/
 
 # direnv
 .direnv/

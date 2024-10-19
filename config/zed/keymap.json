@@ -1,0 +1,60 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      "ctrl-b": null // disable workspace::ToggleLeftDock
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "f d": ["workspace::SendKeystrokes", "escape"],
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "alt-]": "pane::ActivateNextItem",
+      "alt-[": "pane::ActivatePrevItem",
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      "ctrl-;": "assistant::InlineAssist",
+      "ctrl-:": "assistant::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-`": "workspace::ToggleBottomDock",
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
+      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
+      "ctrl-;": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "space space": "command_palette::Toggle",
+      "space o p": "workspace::ToggleRightDock",
+      "space w -": "pane::SplitDown",
+      "space w /": "pane::SplitRight",
+      "space w d": "pane::CloseActiveItem",
+      "space f s": "workspace::Save",
+      "space b d": "pane::CloseActiveItem"
+    }
+  }
+]
