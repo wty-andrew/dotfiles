@@ -2,6 +2,7 @@
   imports = [
     ./blender.nix
     ./krita.nix
-    ./pureref.nix
+    # TODO: currently broken
+    # ./pureref.nix
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }: with pkgs;
+{ pkgs, ... }: with pkgs.stable;
 let
   addtionalPackages = [
     pulumiPackages.pulumi-language-python
