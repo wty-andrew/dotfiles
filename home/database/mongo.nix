@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    mongodb
+    mongodb-ce
     mongodb-compass
     mongodb-tools
     mongosh

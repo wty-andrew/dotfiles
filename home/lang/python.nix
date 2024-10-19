@@ -16,6 +16,7 @@ in
     ]))
     pyenv
     ruff
+    uv
   ];
 
   home.sessionVariables = {
