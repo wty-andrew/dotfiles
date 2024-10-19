@@ -4,9 +4,9 @@
 
     package = pkgs.emacs-pgtk;
 
-    extraPackages = (epkgs: [
+    extraPackages = epkgs: [
       epkgs.vterm
-    ]);
+    ];
   };
 
   services.emacs.enable = true;
