@@ -57,10 +57,7 @@ require("lazy").setup({
 
       local keymap = vim.keymap
 
-      keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<cr>")
-      keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>")
-      keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<cr>")
-      keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<cr>")
+      keymap.set("n", "<leader>op", "<cmd>NvimTreeToggle<cr>")
     end,
   },
   {
@@ -92,4 +89,3 @@ require("lazy").setup({
     "Vimjas/vim-python-pep8-indent"
   }
 })
-
