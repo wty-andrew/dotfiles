@@ -5,3 +5,6 @@ map u scroll half-up
 map d scroll half-down
 map n navigate next
 map p navigate previous
+
+map b set "pages-per-row 2"
+map <C-b> set "pages-per-row 1"
