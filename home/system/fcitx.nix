@@ -10,12 +10,11 @@
         fcitx5-table-extra
       ];
 
-      # TODO: re-enable after https://github.com/catppuccin/nix/pull/343 merged
-      # catppuccin = {
-      #   enable = true;
-      #   flavor = "frappe";
-      #   accent = "mauve";
-      # };
+      catppuccin = {
+        enable = true;
+        flavor = "frappe";
+        accent = "mauve";
+      };
     };
   };
 }

@@ -3,7 +3,7 @@
 
   home.packages = with pkgs; [
     andika
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     (nerdfonts.override { fonts = [ "FiraCode" "Recursive" ]; })
     symbola

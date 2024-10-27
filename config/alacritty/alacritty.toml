@@ -1,5 +1,7 @@
 # https://alacritty.org/config-alacritty.html
 
+[general]
+
 import = [
   "~/.config/alacritty/catppuccin-frappe.toml",
   "~/.config/alacritty/keybindings.toml",
