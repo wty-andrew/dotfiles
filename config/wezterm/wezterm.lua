@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font_with_fallback {
-  'FiraCode Nerd Font Mono',
+  'RecMonoSmCasual Nerd Font Mono',
   'Noto Sans Mono CJK TC'
 }
 config.font_size = 14
@@ -24,6 +24,7 @@ config.hide_tab_bar_if_only_one_tab = true
 
 config.use_ime = true
 config.enable_wayland = false
+config.front_end = "WebGpu"
 config.dpi = 96.0
 
 config.leader = { key = 'Space', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 }

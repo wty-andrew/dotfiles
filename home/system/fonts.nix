@@ -5,7 +5,7 @@
     andika
     noto-fonts-cjk
     noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "Recursive" ]; })
     symbola
   ];
 
