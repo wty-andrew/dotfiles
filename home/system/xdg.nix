@@ -10,5 +10,13 @@ _: {
       publicShare = null;
       templates = null;
     };
+
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/zip" = [ "engrampa.desktop" ];
+        "application/gzip" = [ "engrampa.desktop" ];
+      };
+    };
   };
 }
