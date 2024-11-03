@@ -11,7 +11,7 @@ import = [
 
 padding = { x = 20, y = 20 }
 
-opacity = 0.9
+opacity = 0.95
 
 [font]
 
