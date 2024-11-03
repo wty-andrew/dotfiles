@@ -3,3 +3,10 @@
 [manager]
 ratio = [2, 3, 3]
 sort_by = "natural"
+
+[opener]
+open = [{ run = 'xdg-open "$@"', orphan = true, for = "linux" }]
+extract = [{ run = 'ouch d -y "$@"', for = "unix" }]
+
+[open]
+append_rules = [{ name = "*.pdf", use = "open" }]

@@ -20,7 +20,6 @@
         "sbt"
         "scala"
         "terraform"
-        "yarn"
       ];
     };
 
