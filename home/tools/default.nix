@@ -8,6 +8,7 @@
     ./git.nix
     ./mkcert.nix
     ./motrix.nix
+    ./ouch.nix
     ./realvnc.nix
     ./snapshot.nix
     ./wasmedge.nix
