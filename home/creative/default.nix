@@ -1,8 +1,8 @@
 { ... }: {
   imports = [
-    ./blender.nix
-    ./krita.nix
     # TODO: currently broken
-    # ./pureref.nix
+    # ./blender.nix
+    ./krita.nix
+    ./pureref.nix
   ];
 }
