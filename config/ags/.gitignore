@@ -1,3 +1,2 @@
-node_modules
-types
-dist
+@girs/
+node_modules/

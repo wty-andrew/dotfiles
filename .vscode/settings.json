@@ -1,6 +1,8 @@
 {
-  "eslint.workingDirectories": [
-    "config/ags"
-  ],
-  "nixEnvSelector.suggestion": false
+  "nixEnvSelector.suggestion": false,
+  "biome.projects": [
+    {
+      "path": "config/ags"
+    }
+  ]
 }

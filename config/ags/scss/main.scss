@@ -1,104 +1,26 @@
-@import 'variables';
-@import 'colors';
+@use "colors" as *;
 
-.transparent {
-  background-color: transparent;
-}
-
-// bar
-
-.bar {
-  font-size: 8pt;
-  padding: 5px 8px 0;
-}
-
-.box {
-  color: $text;
-  border-radius: 6px;
-  background-color: $base;
-  padding: 2px 6px;
-}
-
-.end {
-  // color: black;
-  // padding: 0 10px;
-  // border-radius: 10px;
-  // background-color: #f5eee6;
+window.bar {
+  > centerbox {
+    font-size: 10pt;
+    padding: 4px 12px 0px;
+  }
 }
 
 .workspaces button {
   all: unset;
 
-  margin: 0 5px;
   color: $blue;
-
-  &.occupied {
-    color: $mauve;
-  }
+  font-size: 8pt;
 
   &.active {
-    color: #bfc9db;
+    color: $mauve;
   }
 }
 
-window#notifications {
-  all: unset;
-}
-
-window#notifications box.notifications {
-  padding: 0.5em;
-}
-
-.icon {
-  min-width: 68px;
-  min-height: 68px;
-  margin-right: 1em;
-}
-
-.icon image {
-  font-size: 58px;
-  /* to center the icon */
-  margin: 5px;
-  color: $text;
-}
-
-.icon box {
-  min-width: 68px;
-  min-height: 68px;
-  border-radius: 7px;
-}
-
-.notification {
-  min-width: 350px;
-  border-radius: 11px;
-  padding: 1em;
-  margin: 0.5em;
-  border: 2px solid $blue;
+.box {
   background-color: $base;
-}
-
-.notification.critical {
-  border: 2px solid $red;
-}
-
-.title {
+  border-radius: 6px;
   color: $text;
-  font-size: 1.4em;
-}
-
-.body {
-  color: $subtext0;
-}
-
-.actions .action-button {
-  margin: 0 0.4em;
-  margin-top: 0.8em;
-}
-
-.actions .action-button:first-child {
-  margin-left: 0;
-}
-
-.actions .action-button:last-child {
-  margin-right: 0;
+  padding: 2px 6px;
 }
