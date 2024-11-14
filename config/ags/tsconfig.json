@@ -1,19 +1,16 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": [
-      "ESNext",
-    ],
-    "allowJs": true,
-    "checkJs": true,
+    "experimentalDecorators": true,
     "strict": true,
-    "noImplicitAny": false,
-    "baseUrl": ".",
-    "typeRoots": [
-      "./types/*"
-    ],
-    "skipLibCheck": true,
-    "noEmit": true
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "jsxImportSource": "/home/andrew/.local/share/ags/gtk3",
+    "paths": {
+      "astal": ["/home/andrew/.local/share/ags"],
+      "astal/*": ["/home/andrew/.local/share/ags/*"]
+    }
   }
 }
