@@ -1,5 +1,9 @@
 @use "colors" as *;
 
+* {
+  font-family: "RecMonoSmCasual Nerd Font";
+}
+
 window.bar {
   > centerbox {
     font-size: 10pt;
