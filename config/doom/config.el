@@ -21,10 +21,10 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18)
+(setq doom-font (font-spec :family "FiraCode Nerd Font Propo" :size 18)
       doom-variable-pitch-font (font-spec :family "Andika")
       doom-symbol-font (font-spec :family "Symbola")
-      doom-serif-font (font-spec :family "FiraCode Nerd Font")
+      doom-serif-font (font-spec :family "FiraCode Nerd Font Propo")
       doom-emoji-font (font-spec :family "Noto Color Emoji"))
 
 (add-hook! after-setting-font
