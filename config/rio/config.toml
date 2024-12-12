@@ -1,0 +1,32 @@
+hide-cursor-when-typing = true
+
+theme = "catppuccin-frappe"
+
+padding-x = 20
+padding-y = [20, 20]
+
+[window]
+
+opacity = 0.95
+
+[fonts]
+
+family = "RecMonoSmCasual Nerd Font Mono"
+
+size = 18
+
+[fonts.emoji]
+
+family = "Noto Color Emoji"
+
+[scroll]
+
+multiplier = 10.0
+divider = 1.0
+
+[bindings]
+
+keys = [
+  { key = "tab", with = "control", bytes = [27, 91, 57, 59, 53, 117 ] }, # "\x1b[9;5u"
+  { key = "tab", with = "control | shift", bytes = [27, 91, 49, 59, 53, 90 ] } # "\x1b[1;5Z"
+]
