@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./ffmpeg.nix
+    ./imagemagick.nix
     ./imv.nix
     ./mpd.nix
     ./mpris.nix
