@@ -11,6 +11,7 @@
     ../../home/embedded
     ../../home/lang
     ../../home/media
+    ../../home/messenger
     ../../home/organizer
     ../../home/security
     ../../home/system
