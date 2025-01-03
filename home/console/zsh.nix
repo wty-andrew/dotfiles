@@ -27,11 +27,6 @@
 
     syntaxHighlighting = {
       enable = true;
-
-      catppuccin = {
-        enable = true;
-        flavor = "frappe";
-      };
     };
 
     initExtraBeforeCompInit = ''
@@ -55,5 +50,10 @@
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
+  };
+
+  catppuccin.zsh-syntax-highlighting = {
+    enable = true;
+    flavor = "frappe";
   };
 }

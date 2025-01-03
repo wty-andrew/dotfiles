@@ -10,10 +10,10 @@ _: {
       format = "$all";
       gcloud.disabled = true;
     };
+  };
 
-    catppuccin = {
-      enable = true;
-      flavor = "frappe";
-    };
+  catppuccin.starship = {
+    enable = true;
+    flavor = "frappe";
   };
 }

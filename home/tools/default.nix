@@ -12,7 +12,7 @@
     ./ouch.nix
     ./realvnc.nix
     ./snapshot.nix
-    ./wasmedge.nix
+    # ./wasmedge.nix
     ./wifi-hotspot.nix
   ];
 }

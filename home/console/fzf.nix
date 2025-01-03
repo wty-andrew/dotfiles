@@ -1,10 +1,10 @@
 _: {
   programs.fzf = {
     enable = true;
+  };
 
-    catppuccin = {
-      enable = true;
-      flavor = "frappe";
-    };
+  catppuccin.fzf = {
+    enable = true;
+    flavor = "frappe";
   };
 }

@@ -1,6 +1,6 @@
 import Tray from 'gi://AstalTray'
 import { bind } from 'astal'
-import { App, Astal, Gdk } from 'astal/gtk3'
+import { App } from 'astal/gtk3'
 
 interface TrayItemProps {
   item: Tray.TrayItem
@@ -8,26 +8,17 @@ interface TrayItemProps {
 
 const TrayItem = ({ item }: TrayItemProps) => {
   if (item.iconThemePath) App.add_icons(item.iconThemePath)
-  const menu = item.create_menu()
 
+  // TODO: check if the new api supports different mouse buttons
   return (
-    <eventbox
+    <menubutton
       tooltipMarkup={bind(item, 'tooltipMarkup')}
-      onDestroy={() => menu?.destroy()}
-      onClickRelease={(self, event) => {
-        switch (event.button) {
-          case Astal.MouseButton.PRIMARY:
-            menu?.activate()
-            break
-
-          case Astal.MouseButton.SECONDARY:
-            menu?.popup_at_widget(self, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null)
-            break
-        }
-      }}
+      usePopover={false}
+      actionGroup={bind(item, 'actionGroup').as((ag) => ['dbusmenu', ag])}
+      menuModel={bind(item, 'menuModel')}
     >
-      <icon gIcon={bind(item, 'gicon')} />
-    </eventbox>
+      <icon gicon={bind(item, 'gicon')} />
+    </menubutton>
   )
 }
 
@@ -36,7 +27,7 @@ const SysTray = () => {
   const trayItems = bind(tray, 'items')
 
   return (
-    <box className="box" spacing={8}>
+    <box className="systray">
       {trayItems.as((items) => items.map((item) => <TrayItem item={item} />))}
     </box>
   )

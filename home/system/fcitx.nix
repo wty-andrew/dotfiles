@@ -9,12 +9,12 @@
         fcitx5-gtk
         fcitx5-table-extra
       ];
-
-      catppuccin = {
-        enable = true;
-        flavor = "frappe";
-        accent = "mauve";
-      };
     };
+  };
+
+  catppuccin.fcitx5 = {
+    enable = true;
+    flavor = "frappe";
+    accent = "mauve";
   };
 }

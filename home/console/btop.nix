@@ -1,10 +1,10 @@
 _: {
   programs.btop = {
     enable = true;
+  };
 
-    catppuccin = {
-      enable = true;
-      flavor = "frappe";
-    };
+  catppuccin.btop = {
+    enable = true;
+    flavor = "frappe";
   };
 }

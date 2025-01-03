@@ -28,3 +28,21 @@ window.bar {
   color: $text;
   padding: 2px 6px;
 }
+
+.systray {
+  background-color: $base;
+  border-radius: 6px;
+
+  button {
+    background-color: inherit;
+    padding: 0px 3px;
+
+    &:first-child {
+      padding-left: 6px;
+    }
+
+    &:last-child {
+      padding-right: 6px;
+    }
+  }
+}

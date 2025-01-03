@@ -3,11 +3,11 @@
     enable = true;
 
     extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+  };
 
-    catppuccin = {
-      enable = true;
-      flavor = "frappe";
-    };
+  catppuccin.bat = {
+    enable = true;
+    flavor = "frappe";
   };
 
   programs.zsh.shellAliases = {

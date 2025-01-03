@@ -2,10 +2,10 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
+  };
 
-    catppuccin = {
-      enable = true;
-      flavor = "frappe";
-    };
+  catppuccin.rofi = {
+    enable = true;
+    flavor = "frappe";
   };
 }
