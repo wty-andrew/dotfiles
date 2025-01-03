@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     delta
     gh
+    gitbutler
     gitmoji-cli
   ];
 
