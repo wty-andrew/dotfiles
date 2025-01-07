@@ -38,6 +38,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   hardware.nvidia = {
+    open = true;
+
     prime = {
       offload = {
         enable = true;
