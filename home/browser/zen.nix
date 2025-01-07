@@ -1,5 +1,9 @@
-{ lib, ... }: {
-  # TODO: use https://github.com/NixOS/nixpkgs/issues/327982 instead of flatpak
+{ inputs, pkgs, lib, ... }: {
+  # TODO: check https://github.com/NixOS/nixpkgs/issues/327982
+  home.packages = [
+    inputs.zen-browser.packages.${pkgs.system}.default
+  ];
+
   xdg.mimeApps.defaultApplications =
     let
       mimeTypes = [
@@ -12,5 +16,5 @@
         "x-scheme-handler/unknown"
       ];
     in
-    lib.genAttrs mimeTypes (_: [ "io.github.zen_browser.zen.desktop" ]);
+    lib.genAttrs mimeTypes (_: [ "zen.desktop" ]);
 }
