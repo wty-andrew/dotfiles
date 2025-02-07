@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   home.packages = with pkgs; [
     delta
     gh
@@ -34,13 +34,7 @@
   '';
 
   xdg.configFile = {
-    "delta/themes/catppuccin.gitconfig".source = pkgs.fetchFromGitHub
-      {
-        owner = "catppuccin";
-        repo = "delta";
-        rev = "765eb17d0268bf07c20ca439771153f8bc79444f";
-        sha256 = "sha256-GA0n9obZlD0Y2rAbGMjcdJ5I0ij1NEPBFC7rv7J49QI=";
-      } + /catppuccin.gitconfig;
+    "delta/themes/catppuccin.gitconfig".source = "${config.catppuccin.sources.delta}/catppuccin.gitconfig";
 
     "lazygit".source = ../../config/lazygit;
   };

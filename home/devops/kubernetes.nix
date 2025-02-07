@@ -13,7 +13,7 @@
       themeFile = "catppuccin-frappe-transparent.yaml";
     in
     {
-      "k9s/skins/${themeFile}".source = config.catppuccin.sources.k9s + /dist/${themeFile};
+      "k9s/skins/${themeFile}".source = config.catppuccin.sources.k9s + "/${themeFile}";
     };
 
   home.sessionPath = [
