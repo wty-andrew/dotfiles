@@ -18,6 +18,7 @@ in
   home.packages = with pkgs; [
     inputs.ags.packages.${system}.io # astal cli
     sassc
+    mako # TODO: remove once implemented in ags
   ] ++ agsPackages;
 
   programs.ags = {
@@ -32,4 +33,5 @@ in
   };
 
   xdg.configFile."ags".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/ags);
+  xdg.configFile."mako".source = ../../config/mako;
 }
