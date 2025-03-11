@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   # https://nixos.wiki/wiki/Visual_Studio_Code
   home.packages = with pkgs; [
     vscode.fhs
@@ -17,4 +17,8 @@
       version = "latest";
     });
   };
+
+  home.sessionPath = [
+    "${config.xdg.configHome}/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin"
+  ];
 }
