@@ -3,6 +3,7 @@
     clang-tools_17
     cmake
     gcc
+    gdb
     gnumake
     xmake
   ];
