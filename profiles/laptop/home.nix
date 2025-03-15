@@ -4,6 +4,7 @@
 
     ../../home/browser
     ../../home/capture
+    ../../home/cloud
     ../../home/console
     ../../home/database
     ../../home/devops
