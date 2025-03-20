@@ -14,5 +14,6 @@
     ./snapshot.nix
     # ./wasmedge.nix
     ./wifi-hotspot.nix
+    ./zenoh.nix
   ];
 }
