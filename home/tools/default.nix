@@ -10,6 +10,7 @@
     ./mkcert.nix
     ./motrix.nix
     ./ouch.nix
+    ./presenterm.nix
     ./realvnc.nix
     ./snapshot.nix
     # ./wasmedge.nix
