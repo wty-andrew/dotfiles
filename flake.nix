@@ -117,7 +117,7 @@
           extraSpecialArgs = { inherit inputs username helpers; };
           modules = [
             (./. + "/profiles/${profile}/home.nix")
-            catppuccin.homeManagerModules.catppuccin
+            catppuccin.homeModules.catppuccin
             sops-nix.homeManagerModules.sops
           ];
         };
