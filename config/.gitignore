@@ -15,6 +15,7 @@ auto-save-list
 # Python
 __pycache__/
 .mypy_cache/
+.venv/
 
 # Editors
 .vscode/
