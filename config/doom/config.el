@@ -112,8 +112,10 @@
   (setq org-hide-emphasis-markers t
         org-ellipsis " ▾ "
         org-fontify-done-headline nil)
-  (setq org-superstar-headline-bullets-list '(?🞺 ?🞹 ?🞸 ?🞷 ?🞶)
-        org-superstar-item-bullet-alist '((?- . ?•) (?+ . ?◦) (?* . ?🟉)))
+  (setq org-modern-star 'replace
+        org-modern-replace-stars "🞺🞹🞸🞷🞶"
+        org-modern-list '((?- . "•") (?+ . "◦") (?* . "🟉"))
+        org-modern-checkbox '((?X . "") (?- . "") (?\s . "")))
   (setq org-list-demote-modify-bullet '(("-" . "+")
                                         ("+" . "-")
                                         ("1." . "-")
@@ -146,6 +148,7 @@
   `(+org-todo-project :foreground ,(catppuccin-get-color 'blue))
   `(org-done :foreground ,(catppuccin-get-color 'teal)))
 
+;; TODO: can org-modern replace prettify-symbols-mode?
 (defun prettify-org-symbols ()
   (setq prettify-symbols-alist '(("[ ]" . "")
                                  ("[-]" . "")
