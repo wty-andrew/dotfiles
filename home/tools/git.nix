@@ -20,7 +20,7 @@
     enable = true;
   };
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     function lg() {
       export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
 

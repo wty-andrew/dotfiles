@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   home.packages = with pkgs; [
     fzf
   ];
@@ -29,7 +29,7 @@
       enable = true;
     };
 
-    initExtraBeforeCompInit = ''
+    initContent = lib.mkOrder 550 ''
       fpath+=(${toString ../../config/zsh/site-functions})
     '';
 

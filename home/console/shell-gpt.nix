@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   home.packages = with pkgs; [
     (shell-gpt.overrideAttrs (oldAttrs: {
       propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ python3.pkgs.litellm ];
     }))
   ];
 
-  programs.zsh.initExtraBeforeCompInit = ''
+  programs.zsh.initContent = lib.mkOrder 550 ''
     _sgpt_zsh() {
     if [[ -n "$BUFFER" ]]; then
         _sgpt_prev_cmd=$BUFFER

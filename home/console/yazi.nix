@@ -8,7 +8,7 @@
     ueberzugpp
   ];
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     function yz() {
       local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
       yazi "$@" --cwd-file="$tmp"

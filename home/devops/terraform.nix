@@ -4,7 +4,7 @@
     terragrunt
   ];
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     complete -o nospace -C ${pkgs.terragrunt}/bin/terragrunt terragrunt
   '';
 }
