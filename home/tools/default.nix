@@ -7,6 +7,7 @@
     ./caddy.nix
     ./editorconfig.nix
     ./git.nix
+    ./grsync.nix
     ./mkcert.nix
     ./motrix.nix
     ./ouch.nix
