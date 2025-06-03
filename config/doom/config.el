@@ -115,7 +115,8 @@
   (setq org-modern-star 'replace
         org-modern-replace-stars "🞺🞹🞸🞷🞶"
         org-modern-list '((?- . "•") (?+ . "◦") (?* . "🟉"))
-        org-modern-checkbox '((?X . "") (?- . "") (?\s . "")))
+        org-modern-checkbox '((?X . "") (?- . "") (?\s . ""))
+        org-modern-block-name '(("src" . ("" "―")) ("quote" . ("" ""))))
   (setq org-list-demote-modify-bullet '(("-" . "+")
                                         ("+" . "-")
                                         ("1." . "-")
@@ -148,22 +149,9 @@
   `(+org-todo-project :foreground ,(catppuccin-get-color 'blue))
   `(org-done :foreground ,(catppuccin-get-color 'teal)))
 
-;; TODO: can org-modern replace prettify-symbols-mode?
-(defun prettify-org-symbols ()
-  (setq prettify-symbols-alist '(("[ ]" . "")
-                                 ("[-]" . "")
-                                 ("[X]" . "")
-                                 ("#+begin_src" . "")
-                                 ("#+end_src" . "―")
-                                 ("#+results:" . "")
-                                 ("#+RESULTS:" . "")
-                                 ("#+begin_quote" . "")
-                                 ("#+end_quote" . ""))))
-
 (add-hook! org-mode
            #'mixed-pitch-mode
            #'copilot-mode
-           #'prettify-org-symbols
            (text-scale-increase 1))
 
 (setq org-agenda-files (list (concat org-directory "agenda")))
