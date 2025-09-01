@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports =
     [
       ./hardware-configuration.nix
@@ -52,6 +52,13 @@
 
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
+    };
+  };
+
+  # https://github.com/NixOS/nixpkgs/issues/421775
+  services.ollama = {
+    package = pkgs.ollama.override {
+      cudaArches = [ "61" ];
     };
   };
 }
