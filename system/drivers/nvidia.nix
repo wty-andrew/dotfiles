@@ -6,7 +6,17 @@
     powerManagement.finegrained = false;
     nvidiaSettings = true;
   };
-  hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit = {
+    enable = true;
+
+    # https://github.com/NixOS/nixpkgs/issues/383085
+    mounts = [
+      {
+        hostPath = "${pkgs.addDriverRunpath.driverLink}/share/vulkan/icd.d";
+        containerPath = "/etc/vulkan/icd.d";
+      }
+    ];
+  };
 
   hardware.graphics.extraPackages = [ pkgs.nvidia-vaapi-driver ];
 
