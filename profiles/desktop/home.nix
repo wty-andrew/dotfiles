@@ -12,6 +12,7 @@
     ../../home/editor
     ../../home/embedded
     ../../home/game
+    ../../home/gis
     ../../home/lang
     ../../home/media
     ../../home/messenger
