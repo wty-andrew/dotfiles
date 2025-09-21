@@ -1,6 +1,5 @@
 { ... }: {
   imports = [
-    ./aider.nix
     ./appimage.nix
     ./baobab.nix
     ./bruno.nix
