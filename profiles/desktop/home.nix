@@ -10,6 +10,7 @@
     ../../home/creative
     ../../home/database
     ../../home/devops
+    ../../home/document
     ../../home/editor
     ../../home/embedded
     ../../home/game
