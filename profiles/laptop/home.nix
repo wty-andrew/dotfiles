@@ -2,6 +2,7 @@
   imports = [
     ../base/home.nix
 
+    ../../home/ai
     ../../home/browser
     ../../home/capture
     ../../home/cloud
