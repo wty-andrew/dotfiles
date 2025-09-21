@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    clang-tools_17
+    clang-tools
     cmake
     gcc
     gdb
