@@ -9,6 +9,7 @@
     ../../home/console
     ../../home/database
     ../../home/devops
+    ../../home/document
     ../../home/editor
     ../../home/embedded
     ../../home/lang
