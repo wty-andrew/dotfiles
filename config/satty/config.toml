@@ -1,0 +1,5 @@
+[general]
+copy-command = "wl-copy"
+actions-on-enter = ["save-to-file"]
+# TODO: use home-dir in future release https://github.com/gabm/Satty/pull/239
+output-filename = "/home/andrew/Pictures/satty-%Y-%m-%d_%H:%M:%S.png"
