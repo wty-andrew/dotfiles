@@ -23,6 +23,7 @@
 
   environment.systemPackages = with pkgs; [
     git # required for flakes
+    ntfs3g
   ];
 
   system.stateVersion = "23.11";
