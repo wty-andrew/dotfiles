@@ -18,12 +18,6 @@
       fsType = "ext4";
     };
 
-  fileSystems."/run/media/andrew/data" =
-    { device = "/dev/disk/by-uuid/f2582148-cc21-4792-a94f-820e16ac27f5";
-      fsType = "ext4";
-      options = [ "defaults" "user" "rw" ];
-    };
-
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/F7BB-8B62";
       fsType = "vfat";
