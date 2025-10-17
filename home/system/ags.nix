@@ -1,6 +1,6 @@
 { inputs, config, pkgs, helpers, ... }:
 let
-  agsPackages = with inputs.ags.packages.${pkgs.system}; [
+  agsPackages = with inputs.ags.packages.${pkgs.stdenv.hostPlatform.system}; [
     apps
     battery
     bluetooth
@@ -16,7 +16,7 @@ in
   imports = [ inputs.ags.homeManagerModules.default ];
 
   home.packages = with pkgs; [
-    inputs.ags.packages.${system}.io # astal cli
+    inputs.ags.packages.${pkgs.stdenv.hostPlatform.system}.io # astal cli
     sassc
     mako # TODO: remove once implemented in ags
   ] ++ agsPackages;

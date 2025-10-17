@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     # wallpaper
     hyprpaper
-    inputs.swww.packages.${pkgs.system}.swww
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
 
     # clipboard
     cliphist

@@ -1,7 +1,7 @@
 { inputs, pkgs, lib, ... }: {
   # TODO: check https://github.com/NixOS/nixpkgs/issues/327982
   home.packages = [
-    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   xdg.mimeApps.defaultApplications =
