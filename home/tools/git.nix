@@ -4,6 +4,7 @@
     gh
     gitbutler
     gitmoji-cli
+    pre-commit
   ];
 
   programs.git = {

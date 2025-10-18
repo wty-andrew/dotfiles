@@ -5,6 +5,7 @@
     ./bruno.nix
     ./caddy.nix
     ./editorconfig.nix
+    ./foxglove.nix
     ./git.nix
     ./grsync.nix
     ./mkcert.nix
