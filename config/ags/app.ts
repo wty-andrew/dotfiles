@@ -1,13 +1,14 @@
-import { App } from 'astal/gtk3'
+import app from 'ags/gtk4/app'
 
 import style from './scss/main.scss'
 import Bar from './widget/bar'
 
-App.add_icons('./assets/icon')
+app.add_icons('./assets/icon')
 
-App.start({
+const monitor = app.get_monitors()[0]
+app.start({
   css: style,
   main() {
-    Bar(0)
+    Bar(monitor)
   },
 })

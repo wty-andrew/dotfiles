@@ -1,36 +1,34 @@
-import { App, Astal, Gtk } from 'astal/gtk3'
+import { Astal, type Gdk, Gtk } from 'ags/gtk4'
+import app from 'ags/gtk4/app'
 
 import Audio from './audio'
-import Battery from './battery'
-import Bluetooth from './bluetooth'
 import Clock from './clock'
 import Tray from './tray'
-import Workspaces from './workspaces'
 
 const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
 
-const Bar = (monitor: number) => {
+const Bar = (gdkmonitor: Gdk.Monitor) => {
   return (
     <window
       name="bar"
-      monitor={monitor}
+      gdkmonitor={gdkmonitor}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
+      application={app}
       anchor={TOP | LEFT | RIGHT}
-      application={App}
-      className="bar"
+      class="bar"
+      visible
     >
-      <centerbox>
-        <box hexpand halign={Gtk.Align.START} spacing={10}>
-          <icon icon="nixoscolorful" />
-          <Workspaces />
+      <centerbox cssName="centerbox">
+        <box $type="start" hexpand spacing={10}>
+          <image iconName="nixoscolorful" />
+          {/* <Workspaces /> */}
         </box>
 
-        <box />
+        <box $type="center" />
 
-        <box hexpand halign={Gtk.Align.END} spacing={5}>
-          <Audio />
-          <Battery />
-          <Bluetooth />
+        <box $type="end" halign={Gtk.Align.END} spacing={5}>
+          {/* <Audio /> */}
+          {/* <Bluetooth /> */}
           <Clock />
           <Tray />
         </box>

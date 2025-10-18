@@ -1,29 +1,19 @@
 import GLib from 'gi://GLib'
-import { Variable } from 'astal'
+import { Gtk } from 'ags/gtk4'
+import { createPoll } from 'ags/time'
 
-enum Format {
-  DATE = '%F',
-  TIME = '%H:%M %p',
-}
-
-const now = (format = Format.TIME) => GLib.DateTime.new_now_local().format(format)!
+const now = () => GLib.DateTime.new_now_local().format('%H:%M %p')!
 
 const Clock = () => {
-  let format: Format = Format.TIME
-  const stamp = Variable(now(format)).poll(1000, () => now(format))
+  const stamp = createPoll('', 1000, now)
 
   return (
-    <eventbox
-      onClick={() => {
-        format = format === Format.DATE ? Format.TIME : Format.DATE
-        stamp.set(now(format))
-      }}
-      onDestroy={() => stamp.drop()}
-    >
-      <box className="box">
-        <label label={stamp()} />
-      </box>
-    </eventbox>
+    <menubutton $type="end" hexpand halign={Gtk.Align.CENTER}>
+      <label label={stamp} />
+      <popover>
+        <Gtk.Calendar />
+      </popover>
+    </menubutton>
   )
 }
 

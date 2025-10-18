@@ -1,36 +1,37 @@
-import Tray from 'gi://AstalTray'
-import { bind } from 'astal'
-import { App } from 'astal/gtk3'
+import AstalTray from 'gi://AstalTray'
+import { createBinding, For } from 'ags'
 
 interface TrayItemProps {
-  item: Tray.TrayItem
+  item: AstalTray.TrayItem
 }
 
 const TrayItem = ({ item }: TrayItemProps) => {
-  if (item.iconThemePath) App.add_icons(item.iconThemePath)
+  const gicon = createBinding(item, 'gicon')
 
-  // TODO: check if the new api supports different mouse buttons
   return (
     <menubutton
-      tooltipMarkup={bind(item, 'tooltipMarkup')}
-      usePopover={false}
-      actionGroup={bind(item, 'actionGroup').as((ag) => ['dbusmenu', ag])}
-      menuModel={bind(item, 'menuModel')}
+      $={(btn) => {
+        btn.menuModel = item.menuModel
+        btn.insert_action_group('dbusmenu', item.actionGroup)
+        item.connect('notify::action-group', () =>
+          btn.insert_action_group('dbusmenu', item.actionGroup)
+        )
+      }}
     >
-      <icon gicon={bind(item, 'gicon')} />
+      <image gicon={gicon} />
     </menubutton>
   )
 }
 
-const SysTray = () => {
-  const tray = Tray.get_default()
-  const trayItems = bind(tray, 'items')
+const Tray = () => {
+  const tray = AstalTray.get_default()
+  const items = createBinding(tray, 'items')
 
   return (
-    <box className="systray">
-      {trayItems.as((items) => items.map((item) => <TrayItem item={item} />))}
+    <box>
+      <For each={items}>{(item) => <TrayItem item={item} />}</For>
     </box>
   )
 }
 
-export default SysTray
+export default Tray
