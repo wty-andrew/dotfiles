@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, config, pkgs, helpers, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -23,4 +23,10 @@
   home.packages = [
     inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system}.hyprpicker
   ];
+
+  programs.hyprpanel = {
+    enable = true;
+  };
+
+  xdg.configFile."hyprpanel".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/hyprpanel);
 }
