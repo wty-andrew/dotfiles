@@ -6,7 +6,7 @@
     nerd-fonts.fira-code
     nerd-fonts.recursive-mono
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     symbola
   ];
 

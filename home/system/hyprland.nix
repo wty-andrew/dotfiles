@@ -3,7 +3,7 @@
     enable = true;
     xwayland.enable = true;
 
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     plugins = [
       # TODO:
@@ -21,6 +21,6 @@
   };
 
   home.packages = [
-    inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+    inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system}.hyprpicker
   ];
 }
