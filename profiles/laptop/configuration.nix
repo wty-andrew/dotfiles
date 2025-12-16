@@ -1,4 +1,4 @@
-{ username, ... }: {
+{ username, pkgs, ... }: {
   imports =
     [
       ./hardware-configuration.nix
@@ -58,5 +58,9 @@
     settings = {
       PasswordAuthentication = false;
     };
+  };
+
+  services.ollama = {
+    package = pkgs.ollama-cuda;
   };
 }

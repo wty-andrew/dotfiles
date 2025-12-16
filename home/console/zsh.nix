@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }: {
   home.packages = with pkgs; [
     fzf
   ];
@@ -7,6 +7,9 @@
 
   programs.zsh = {
     enable = true;
+
+    # this is new default for home.stateVersion 26.05
+    dotDir = "${config.xdg.configHome}/zsh";
 
     oh-my-zsh = {
       enable = true;
