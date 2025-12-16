@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   imports =
     [
       ./hardware-configuration.nix
@@ -57,7 +57,7 @@
 
   # https://github.com/NixOS/nixpkgs/issues/421775
   services.ollama = {
-    package = pkgs.ollama.override {
+    package = pkgs.ollama-cuda.override {
       cudaArches = [ "61" ];
     };
   };

@@ -1,9 +1,10 @@
 { inputs, config, pkgs, helpers, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    xwayland.enable = true;
+    package = null;
+    portalPackage = null;
 
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    xwayland.enable = true;
 
     plugins = [
       # TODO:
