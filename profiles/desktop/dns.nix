@@ -20,5 +20,6 @@
         file = config.sops.secrets.zone.path;
       };
     };
+    listenOn = [ "127.0.0.1" ];
   };
 }
