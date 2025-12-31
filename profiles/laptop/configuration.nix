@@ -29,6 +29,7 @@
       ../../system/services/locate.nix
       ../../system/services/ollama.nix
       ../../system/services/ssh.nix
+      ../../system/services/vpn.nix
 
       ../../system/virtualisation/docker.nix
       ../../system/virtualisation/podman.nix
