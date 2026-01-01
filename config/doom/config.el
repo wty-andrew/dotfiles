@@ -136,7 +136,8 @@
           ("[-]" . +org-todo-active)
           ("[?]" . +org-todo-onhold)
           ("[X]" . org-done)))
-  (setq org-src-fontify-natively t))
+  (setq org-src-fontify-natively t)
+  (add-to-list 'org-src-lang-modes '("typescript" . typescript-ts)))
 
 (custom-set-faces!
   `(org-quote :background ,(catppuccin-get-color 'mantle) :extend t)
