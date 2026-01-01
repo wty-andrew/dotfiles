@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     nil
     nixd
-    nixpkgs-fmt
+    nixfmt-rfc-style
     statix
   ];
 

@@ -2,7 +2,7 @@
   programs.emacs = {
     enable = true;
 
-    package = pkgs.emacs-git-pgtk;
+    package = pkgs.emacs-unstable-pgtk;
 
     extraPackages = epkgs: [
       epkgs.vterm
@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     buku
     editorconfig-core-c
+    graphviz
     ripgrep
     shellcheck
     sqlite
