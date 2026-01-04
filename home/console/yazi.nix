@@ -1,6 +1,9 @@
 { config, pkgs, helpers, ... }: {
   programs.yazi = {
     enable = true;
+
+    # this is new default for home.stateVersion 26.05
+    shellWrapperName = "y";
   };
 
   home.packages = with pkgs; [

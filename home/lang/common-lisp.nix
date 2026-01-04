@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    roswell
+    # roswell # TODO: broken
     sbcl
   ];
 }
