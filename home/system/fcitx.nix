@@ -16,5 +16,6 @@
     enable = true;
     flavor = "frappe";
     accent = "mauve";
+    apply = false;
   };
 }
