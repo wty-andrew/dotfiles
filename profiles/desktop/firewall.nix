@@ -11,6 +11,10 @@ _: {
         7447 # zenoh
       ];
 
+      allowedUDPPorts = [
+        14550 # mavlink
+      ];
+
       extraInputRules = ''
         ip daddr 224.0.0.0/4 udp dport 0-65535 accept
         ip saddr 224.0.0.0/4 udp sport 0-65535 accept
