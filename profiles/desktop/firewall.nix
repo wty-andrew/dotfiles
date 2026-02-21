@@ -11,6 +11,8 @@ _: {
         7447 # zenoh
       ];
 
+      checkReversePath = "loose";
+
       extraInputRules = ''
         ip daddr 224.0.0.0/4 udp dport 0-65535 accept
         ip saddr 224.0.0.0/4 udp sport 0-65535 accept

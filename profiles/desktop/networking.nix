@@ -5,7 +5,7 @@ _: {
   networking.bridges."br0".interfaces = [ "enp5s0" ];
   networking.interfaces.br0.useDHCP = false;
   networking.interfaces.br0.ipv4.addresses = [{
-    address = "192.168.0.50";
+    address = "192.168.0.10";
     prefixLength = 24;
   }];
 }
