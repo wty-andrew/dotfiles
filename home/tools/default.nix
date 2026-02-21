@@ -5,9 +5,11 @@
     ./bruno.nix
     ./caddy.nix
     ./editorconfig.nix
+    ./filezilla.nix
     ./foxglove.nix
     ./git.nix
     ./grsync.nix
+    ./meshlab.nix
     ./mkcert.nix
     ./motrix.nix
     ./ouch.nix

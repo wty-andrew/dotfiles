@@ -1,9 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   home.packages = with pkgs; [
     minikube
     krew
     kubectl
     kubernetes-helm
+    # (lib.lowPrio k3s) # lowPrio to prevent kubectl conflict
   ];
 
   programs.k9s.enable = true;
