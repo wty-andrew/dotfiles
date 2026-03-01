@@ -16,7 +16,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "plugdev" ];
   };
 
   nixpkgs.config.allowUnfree = true;
