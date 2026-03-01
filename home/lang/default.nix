@@ -8,6 +8,7 @@
     ./python.nix
     ./rust.nix
     ./scala.nix
+    ./scheme.nix
     ./typescript.nix
   ];
 }
