@@ -35,9 +35,9 @@
 
     # misc
     dig
+    fastfetch
     file
     jq
     just
-    neofetch
   ];
 }
