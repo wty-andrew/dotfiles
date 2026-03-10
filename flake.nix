@@ -61,9 +61,14 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    waveforms = {
+      url = "github:liff/waveforms-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, waveforms, ... }:
     let
       system = "x86_64-linux";
       hostname = "nixos";
@@ -103,6 +108,7 @@
           modules = [
             (./. + "/profiles/${profile}/configuration.nix")
             sops-nix.nixosModules.sops
+            waveforms.nixosModule
           ];
         };
 
