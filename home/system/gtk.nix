@@ -50,6 +50,9 @@
       gtk4.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
       };
+
+      # this is new default for home.stateVersion 26.05
+      gtk4.theme = null;
     };
 
   xdg.configFile =

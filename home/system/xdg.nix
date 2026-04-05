@@ -9,6 +9,9 @@ _: {
       desktop = null;
       publicShare = null;
       templates = null;
+
+      # this is new default for home.stateVersion 26.05
+      setSessionVariables = false;
     };
 
     mimeApps = {

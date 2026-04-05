@@ -1,9 +1,10 @@
 { ... }: {
   imports = [
     ./gdal.nix
+    ./martin.nix
     ./pmtiles.nix
     ./qgis.nix
-    # ./tilemaker.nix # TODO: currently broken
+    ./tilemaker.nix
     ./tippecanoe.nix
   ];
 }

@@ -1,8 +1,8 @@
-{ pkgs, ... }: with pkgs.stable;
+{ pkgs, ... }: with pkgs;
 let
   addtionalPackages = [
-    pulumiPackages.pulumi-language-python
-    pulumiPackages.pulumi-language-nodejs
+    pulumiPackages.pulumi-python
+    pulumiPackages.pulumi-nodejs
   ];
 in
 {

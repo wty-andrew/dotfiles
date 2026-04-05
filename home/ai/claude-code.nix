@@ -1,5 +1,5 @@
 { config, pkgs, helpers, ... }: {
-  home.packages = with pkgs; [
+  home.packages = with pkgs.stable; [ # TODO: unstable currently broken
     claude-code
   ];
 

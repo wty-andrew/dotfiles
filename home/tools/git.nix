@@ -10,6 +10,8 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
+    # this is new default for home.stateVersion 25.05
+    signing.format = null;
   };
 
   home.file = {

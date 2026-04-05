@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   imports =
     [
       ./hardware-configuration.nix
@@ -44,6 +44,7 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     open = false;
 
     prime = {
