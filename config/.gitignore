@@ -24,3 +24,7 @@ __pycache__/
 # direnv
 .direnv/
 .envrc
+
+# Claude Code
+CLAUDE.local.md
+settings.local.json
