@@ -4,6 +4,6 @@
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
-    "openclaw-2026.3.12"
+    "openclaw-2026.5.7"
   ];
 }

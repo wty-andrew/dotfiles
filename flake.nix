@@ -39,6 +39,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -108,7 +113,7 @@
           modules = [
             (./. + "/profiles/${profile}/configuration.nix")
             sops-nix.nixosModules.sops
-            waveforms.nixosModule
+            # waveforms.nixosModule
           ];
         };
 
