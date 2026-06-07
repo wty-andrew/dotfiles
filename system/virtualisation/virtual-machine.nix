@@ -11,6 +11,8 @@
 
   environment.systemPackages = with pkgs; [
     dnsmasq
+    guestfs-tools
+    virtiofsd
   ];
 
   programs.virt-manager.enable = true;
