@@ -1,4 +1,4 @@
-{ helpers, ... }: {
+_: {
   imports = [
     ../base/home.nix
 
@@ -24,16 +24,5 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-  };
-
-  wayland.windowManager.hyprland = {
-    settings =
-      let
-        configPath = name: helpers.runtimePath (../../config/hypr + "/${name}.conf");
-        names = [ "nvidia" "variables" "frappe" "keybindings" "plugin" "startup" "laptop" ];
-      in
-      {
-        source = builtins.map configPath names;
-      };
   };
 }

@@ -1,33 +1,13 @@
 { inputs, config, pkgs, helpers, ... }: {
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = null;
-    portalPackage = null;
-
-    xwayland.enable = true;
-
-    plugins = [
-      # TODO:
-    ];
-
-    systemd.enable = true;
-
-    settings = {
-      env = [
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-      ];
-    };
-  };
+  wayland.windowManager.hyprland.enable = false;
 
   home.packages = [
     inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system}.hyprpicker
   ];
 
-  programs.hyprpanel = {
+  services.wayle = {
     enable = true;
   };
 
-  xdg.configFile."hyprpanel".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/hyprpanel);
+  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/hypr);
 }

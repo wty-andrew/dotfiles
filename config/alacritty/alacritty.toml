@@ -13,6 +13,8 @@ padding = { x = 20, y = 20 }
 
 opacity = 0.95
 
+decorations = "none"
+
 [font]
 
 normal = { family = "RecMonoSmCasual Nerd Font Mono", style = "Regular" }
