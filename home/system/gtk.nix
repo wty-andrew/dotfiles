@@ -5,6 +5,7 @@
   ];
 
   home.pointerCursor = {
+    enable = true;
     name = "Qogir";
     package = pkgs.qogir-icon-theme;
     size = 18;

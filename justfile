@@ -1,6 +1,6 @@
 set dotenv-load
 
-profile := env_var('PROFILE')
+profile := env('PROFILE')
 
 [private]
 default:

@@ -11,8 +11,8 @@
     package = (pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: {
       src = builtins.fetchTarball {
         # redirected url from: https://update.code.visualstudio.com/latest/linux-x64/insider
-        url = "https://vscode.download.prss.microsoft.com/dbazure/download/insider/38dc6ac5a771cc94bde1344722bb2d02c80096ea/code-insider-x64-1729896751.tar.gz";
-        sha256 = "1jwx3rb34xh1z458j50fhlh0b74grmqx0mpzqfa9670f85m3dgkf";
+        url = "https://vscode.download.prss.microsoft.com/dbazure/download/insider/d4434528dd269c894c309379dbc26f48d4a3f803/code-insider-x64-1784570601.tar.gz";
+        sha256 = "044fm5aafrkk7l1dm73slh8w25yin4s0y02yi9090vprjw6vilxg";
       };
       version = "latest";
     });

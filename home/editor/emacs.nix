@@ -18,7 +18,7 @@
     ripgrep
     shellcheck
     sqlite
-    texlive.combined.scheme-full
+    texliveFull
   ];
 
   xdg.configFile."doom".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/doom);

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     mongodb-ce
-    mongodb-compass
+    stable.mongodb-compass # TODO: latest 1.49.10 broken
     mongodb-tools
     mongosh
   ];

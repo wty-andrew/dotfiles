@@ -55,6 +55,8 @@
     ];
   };
 
+  programs.fzf.historyWidget.zsh.command = "";
+
   catppuccin.zsh-syntax-highlighting = {
     enable = true;
     flavor = "frappe";

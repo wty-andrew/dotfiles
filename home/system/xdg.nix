@@ -21,5 +21,7 @@ _: {
         "application/gzip" = [ "engrampa.desktop" ];
       };
     };
+
+    configFile."mimeapps.list".force = true;
   };
 }

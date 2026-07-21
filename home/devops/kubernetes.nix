@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }: {
   home.packages = with pkgs; [
-    minikube
+    (lib.lowPrio minikube) # prevent kubectl conflict
     krew
     kubectl
     kubernetes-helm
