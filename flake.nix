@@ -34,14 +34,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    awww = {
-      url = "git+https://codeberg.org/LGFae/awww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/cachix";
     };
 
     emacs-overlay = {
@@ -73,7 +67,7 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, waveforms, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, noctalia, waveforms, ... }:
     let
       system = "x86_64-linux";
       hostname = "nixos";
@@ -125,6 +119,7 @@
             (./. + "/profiles/${profile}/home.nix")
             catppuccin.homeModules.catppuccin
             sops-nix.homeManagerModules.sops
+            noctalia.homeModules.default
           ];
         };
     in

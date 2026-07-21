@@ -10,7 +10,6 @@
   environment.systemPackages = with pkgs; [
     # wallpaper
     hyprpaper
-    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
 
     # clipboard
     cliphist
@@ -19,8 +18,6 @@
     # misc
     libnotify
   ];
-
-  security.pam.services.swaylock = {};
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # hint for electron apps

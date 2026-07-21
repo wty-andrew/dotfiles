@@ -5,9 +5,12 @@
     inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system}.hyprpicker
   ];
 
-  services.wayle = {
+  programs.noctalia = {
     enable = true;
+    systemd.enable = true;
   };
 
   xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/hypr);
+
+  xdg.configFile."noctalia".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/noctalia);
 }

@@ -1,0 +1,17 @@
+[theme]
+mode = "dark"
+community_palette = "Catppuccin Frappe Mauve"
+source = "community"
+
+[keybinds]
+down = [ "Down", "Ctrl+j", "Ctrl+n" ]
+left = [ "Left", "Ctrl+h" ]
+right = [ "Right", "Ctrl+l" ]
+tab_next = [ "Tab" ]
+tab_previous = [ "Shift+ISO_Left_Tab" ]
+up = [ "Up", "Ctrl+k", "Ctrl+p" ]
+
+[bar.default]
+start = [ "clock", "spacer", "workspaces" ]
+center = [ "active_window" ]
+end = [ "volume", "bluetooth", "clipboard", "tray", "spacer", "notifications" ]
