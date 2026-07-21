@@ -25,6 +25,7 @@
     tldr
 
     # archive
+    p7zip
     unrar
     unzip
     zip
