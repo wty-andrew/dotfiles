@@ -33,6 +33,8 @@
 
       ../../system/virtualisation/docker.nix
       ../../system/virtualisation/podman.nix
+
+      ./printing.nix
     ];
 
   hardware.nvidia = {
