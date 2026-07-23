@@ -23,6 +23,12 @@
       fsType = "vfat";
     };
 
+  fileSystems."/mnt/data" =
+    { device = "/dev/disk/by-uuid/6c0c4873-6b6e-4fb1-94bd-91f7f903b6c2";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" ];
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/47757127-5c21-42df-81e8-bb50f0d7b78d"; }
     ];

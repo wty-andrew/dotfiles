@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
     git # required for flakes
     ntfs3g
+    btrfs-progs
   ];
 
   system.stateVersion = "23.11";

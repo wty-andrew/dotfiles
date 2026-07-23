@@ -1,11 +1,8 @@
 -- Apps
 hl.bind("SUPER + ESCAPE", hl.dsp.window.close())
-hl.bind("SUPER + B", hl.dsp.exec_cmd("nvidia-offload firefox-nightly"))
-hl.bind("SUPER + C", hl.dsp.exec_cmd("nvidia-offload chromium-browser"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("emacsclient -c -a emacs"))
 hl.bind("SUPER + T", hl.dsp.exec_cmd("ghostty +new-window"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("code --enable-wayland-ime --use-angle=none"))
-hl.bind("SUPER + Z", hl.dsp.exec_cmd("nvidia-offload zen"))
 
 -- Layout
 hl.bind("SUPER + P", hl.dsp.window.pseudo())

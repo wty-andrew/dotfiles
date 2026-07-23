@@ -5,6 +5,7 @@
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     nvidiaSettings = true;
+    open = true;
   };
   hardware.nvidia-container-toolkit = {
     enable = true;

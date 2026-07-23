@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+_: {
   imports =
     [
       ./hardware-configuration.nix
@@ -42,26 +42,4 @@
     ];
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-
-  hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-    open = false;
-
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
-
-  # https://github.com/NixOS/nixpkgs/issues/421775
-  services.ollama = {
-    package = pkgs.ollama-cuda.override {
-      cudaArches = [ "61" ];
-    };
-  };
 }

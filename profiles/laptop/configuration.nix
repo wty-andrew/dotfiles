@@ -1,4 +1,4 @@
-{ username, pkgs, ... }: {
+{ username, ... }: {
   imports =
     [
       ./hardware-configuration.nix
@@ -36,8 +36,6 @@
     ];
 
   hardware.nvidia = {
-    open = true;
-
     prime = {
       offload = {
         enable = true;
@@ -59,9 +57,5 @@
     settings = {
       PasswordAuthentication = false;
     };
-  };
-
-  services.ollama = {
-    package = pkgs.ollama-cuda;
   };
 }

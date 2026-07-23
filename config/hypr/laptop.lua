@@ -22,3 +22,7 @@ hl.workspace_rule({ workspace = "7", monitor = "HDMI-A-2", persistent = true })
 hl.workspace_rule({ workspace = "8", monitor = "HDMI-A-2", persistent = true })
 hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-2", persistent = true })
 hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-2", persistent = true })
+
+hl.bind("SUPER + B", hl.dsp.exec_cmd("nvidia-offload firefox-nightly"))
+hl.bind("SUPER + C", hl.dsp.exec_cmd("nvidia-offload chromium-browser"))
+hl.bind("SUPER + Z", hl.dsp.exec_cmd("nvidia-offload zen"))
