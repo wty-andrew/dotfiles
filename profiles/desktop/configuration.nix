@@ -38,6 +38,7 @@ _: {
       ./certs.nix
       ./dns.nix
       ./firewall.nix
+      ./hermes.nix
       ./secrets.nix
     ];
 

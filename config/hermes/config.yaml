@@ -1,0 +1,16 @@
+model:
+  default: "gemma4-64k:e4b"
+  provider: "custom"
+  base_url: "http://localhost:11434/v1"
+
+fallback_providers:
+  - provider: openrouter
+    model: anthropic/claude-sonnet-4
+
+gateway:
+  platforms:
+    telegram:
+      extra:
+        status_indicator: true
+        status_online: "🟢 Online"
+        status_offline: "🔴 Offline"
