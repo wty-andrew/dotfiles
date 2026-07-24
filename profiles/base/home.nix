@@ -1,6 +1,10 @@
-{ username, ... }: {
+{ username, ... }: rec {
   home.username = username;
   home.homeDirectory = "/home/${username}";
+
+  home.sessionPath = [
+    "${home.homeDirectory}/.local/bin"
+  ];
 
   home.stateVersion = "23.11";
 
