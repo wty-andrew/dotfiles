@@ -11,27 +11,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "https://github.com/hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-      type = "git";
-      submodules = true;
-    };
+    hyprland.url = "github:hyprwm/Hyprland";
 
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.hyprland.follows = "hyprland";
     };
 
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
     };
 
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
     };
 
     noctalia = {
@@ -65,9 +59,25 @@
       url = "github:liff/waveforms-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, noctalia, waveforms, ... }:
+  nixConfig = {
+    extra-substituters = [
+      "https://hyprland.cachix.org"
+      "https://noctalia.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
+  };
+
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, noctalia, waveforms, hermes-agent, ... }:
     let
       system = "x86_64-linux";
       hostname = "nixos";
@@ -107,6 +117,7 @@
           modules = [
             (./. + "/profiles/${profile}/configuration.nix")
             sops-nix.nixosModules.sops
+            hermes-agent.nixosModules.default
             # waveforms.nixosModule
           ];
         };
