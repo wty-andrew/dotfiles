@@ -81,12 +81,8 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter").setup({
-        auto_install = true,
-      })
-    end
   },
   {
     "Vimjas/vim-python-pep8-indent"
