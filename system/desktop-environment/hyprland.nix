@@ -15,8 +15,13 @@
     cliphist
     wl-clipboard
 
+    # randr
+    wlr-randr
+    xrandr
+
     # misc
     libnotify
+    xhost
   ];
 
   environment.sessionVariables = {

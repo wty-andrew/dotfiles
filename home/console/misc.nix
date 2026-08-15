@@ -38,6 +38,7 @@
     dig
     fastfetch
     file
+    lsof
     jq
     just
   ];
