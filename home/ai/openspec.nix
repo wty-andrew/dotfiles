@@ -1,5 +1,5 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    llm-agents.spec-kit
+    llm-agents.openspec
   ];
 }

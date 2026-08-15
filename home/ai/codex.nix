@@ -1,6 +1,6 @@
 { config, pkgs, helpers, ... }: {
   home.packages = with pkgs; [
-    codex
+    llm-agents.codex
   ];
 
   home.file.".codex".source = config.lib.file.mkOutOfStoreSymlink (helpers.runtimePath ../../config/codex);

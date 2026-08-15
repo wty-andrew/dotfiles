@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     delta
     gh
-    gitbutler
+    llm-agents.gitbutler
     gitmoji-cli
     pre-commit
   ];

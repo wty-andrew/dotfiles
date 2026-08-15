@@ -36,7 +36,7 @@ hl.bind("SUPER + SHIFT + SPACE", hl.dsp.window.move({ workspace = "special:magic
 
 -- Noctalia
 hl.bind("ALT + Tab", hl.dsp.exec_cmd("noctalia msg window-switcher"))
-hl.bind("SUPER + Comma", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
+hl.bind("SUPER + Return", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind("SUPER + Semicolon", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 
 -- Screenshot

@@ -17,7 +17,6 @@
     # ./realvnc.nix # TODO: remove? (https://github.com/NixOS/nixpkgs/issues/534133)
     ./snapshot.nix
     ./wasmedge.nix
-    ./wifi-hotspot.nix
     ./zenoh.nix
   ];
 }

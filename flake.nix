@@ -64,20 +64,26 @@
       url = "github:NousResearch/hermes-agent";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+    };
   };
 
   nixConfig = {
     extra-substituters = [
       "https://hyprland.cachix.org"
       "https://noctalia.cachix.org"
+      "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, noctalia, waveforms, hermes-agent, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-stable, home-manager, emacs-overlay, catppuccin, sops-nix, noctalia, waveforms, hermes-agent, llm-agents, ... }:
     let
       system = "x86_64-linux";
       hostname = "nixos";
@@ -93,7 +99,11 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ stable-overlay emacs-overlay.overlay ];
+        overlays = [
+          stable-overlay
+          emacs-overlay.overlay
+          llm-agents.overlays.shared-nixpkgs
+        ];
       };
 
       helpers = {
