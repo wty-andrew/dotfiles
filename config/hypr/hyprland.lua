@@ -30,3 +30,6 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Qogir")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("SPICE_NOGRAB", "1")
+
+-- Fine to silently fail, meant to be loaded when present
+pcall(require, "env")
