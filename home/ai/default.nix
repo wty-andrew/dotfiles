@@ -3,6 +3,7 @@
     ./antigravity.nix
     ./claude-code.nix
     ./codex.nix
+    ./hermes.nix
     ./llama.nix
     ./lmstudio.nix
     ./openspec.nix
