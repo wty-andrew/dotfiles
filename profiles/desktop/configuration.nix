@@ -43,6 +43,8 @@
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
+  programs.gamemode.enable = true;
+
   users.users.${username}.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC/F/n3+57DKfSMMZRC2/gT8iIIhxqMZ4idohhhbOSiq wty.andrew@gmail.com"
   ];
